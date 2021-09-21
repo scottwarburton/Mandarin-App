@@ -3,12 +3,6 @@ import LessonOne from "./LessonOne"
 import { HashLink } from 'react-router-hash-link'
 
 class Selection extends React.Components {
-    constructor() {
-        super();
-        this.state = {
-            topic: 1
-        }
-    }
     render() {
         return (
             <div>
