@@ -2,7 +2,7 @@ import React from 'react'
 
 const LessonOne = () => {
     return (
-        <div>
+        <div id="LessonOne">
             <div id="wordTab">
                 <h3>Word list</h3>
             </div>
