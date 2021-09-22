@@ -2,7 +2,7 @@ import React from 'react'
 import LessonOne from "./LessonOne"
 import { Link } from 'react-router-dom'
 
-class Topic extends React.Components {
+class Topic extends React.Component {
     render() {
         return (
             <div>
