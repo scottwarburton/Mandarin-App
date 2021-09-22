@@ -6,30 +6,31 @@ const T1L1 = () => {
     return (
         <div id="LessonOne">
             <Tabs>
-
-                <TabPanel>
-                    <h3>Welcome to Topic 1 Lesson 1</h3>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Word list</h2>
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ul>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Flash cards</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Practise sentence here</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Quiz time</h2>
-                </TabPanel>
-
+                <div className="tabContent">
+                    <TabPanel>
+                        <h3>Welcome to Topic 1 Lesson 2</h3>
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Word list</h2>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Flash cards</h2>
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Practise sentence here</h2>
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Quiz time</h2>
+                    </TabPanel>
+                </div>
+                
                 <TabList>
                     <Tab>Intro</Tab>
                     <Tab>Word list</Tab>

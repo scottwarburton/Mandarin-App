@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tabContent {
+  height: 300px;
+  width: 300px;
+  background-color: #CCC;
+}
