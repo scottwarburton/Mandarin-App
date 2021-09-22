@@ -34,11 +34,23 @@ class App extends React.Component {
       lesson: e.target.value
     })
   }
+  changeTopic() {
+    this.setState({
+      topic: "",
+      lesson: ""
+    })
+  }
+  changeLesson() {
+    this.setState({
+      lesson: ""
+    })
+  }
   render() {
     return (
       <div>
         <h1>Learning Mandarin</h1>
-        <h3>Welcome to Learning Mandarin by Scott</h3> 
+
+        {this.state.topic === "" && this.state.lesson === "" && <h3>Welcome to Learning Mandarin by Scott</h3>} 
 
         { this.state.topic === "" &&
           <form>
@@ -58,17 +70,20 @@ class App extends React.Component {
           </form>
         }
 
-        { this.state.topic && this.state.lesson &&
+        { this.state.topic !== "" && this.state.lesson !== "" &&
           <div>
-            <h3>Welcome to {this.state.topic} {this.state.lesson}</h3>
-            <Link to="`/${this.state.topic}${this.state.lesson}`">Begin topic</Link>
+            <input type="button" value="change topic" onChange={this.changeTopic} />
+
+            <input type="button" value="change lesson" onChange={this.changeLesson} />
           </div>
         }
-        <Switch>
-            <Route exact path="/T1L1" component={T1L1} />
-            <Route path="/T1L2" component={T1L2} />
-        </Switch>
-        
+
+        <div>
+          {this.state.topic === "T1" && this.state.lesson === "L1" ? <T1L1 /> : null}
+          {this.state.topic === "T1" && this.state.lesson === "L2" ? <T1L2 /> : null}
+          {this.state.topic === "T2" && this.state.lesson === "L1" ? <T2L1 /> : null}
+          {this.state.topic === "T2" && this.state.lesson === "L2" ? <T2L2 /> : null}
+        </div>
       </div>
     );
   }

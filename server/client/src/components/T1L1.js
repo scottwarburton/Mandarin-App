@@ -1,22 +1,43 @@
 import React from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const T1L1 = () => {
     return (
         <div id="LessonOne">
-            <h3>Welcome to Topic 1 Lesson 1</h3>
-            
-            <div id="wordTab">
-                <h3>Word list</h3>
-            </div>
-            <div id="flashTab">
-                <h3>Flash cards</h3>
-            </div>
-            <div id="sentenceTab">
-                <h3>Sentences</h3>
-            </div>
-            <div id="quizTab">
-                <h3>Quiz time</h3>
-            </div>
+            <Tabs>
+
+                <TabPanel>
+                    <h3>Welcome to Topic 1 Lesson 1</h3>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Word list</h2>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Flash cards</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Practise sentence here</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Quiz time</h2>
+                </TabPanel>
+
+                <TabList>
+                    <Tab>Intro</Tab>
+                    <Tab>Word list</Tab>
+                    <Tab>Flash cards</Tab>
+                    <Tab>Sentences</Tab>
+                    <Tab>Quiz</Tab>
+                </TabList>
+            </Tabs>
         </div>
     )
 }
