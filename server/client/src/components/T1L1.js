@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LessonOne = () => {
+const T1L1 = () => {
     return (
         <div id="LessonOne">
             <h3>Welcome to Topic 1 Lesson 1</h3>
@@ -21,4 +21,4 @@ const LessonOne = () => {
     )
 }
 
-export default LessonOne
+export default T1L1

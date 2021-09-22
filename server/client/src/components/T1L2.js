@@ -1,6 +1,6 @@
 import React from 'react'
 
-const T1LessonTwo = () => {
+const T1L2 = () => {
     return (
         <div>
             <h3>Welcome to Topic 1 Lesson 2</h3>
@@ -8,4 +8,4 @@ const T1LessonTwo = () => {
     )
 }
 
-export default T1LessonTwo
+export default T1L2
