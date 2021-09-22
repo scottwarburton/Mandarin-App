@@ -13,7 +13,31 @@ code {
 }
 
 .tabContent {
-  height: 300px;
-  width: 300px;
+  height: 500px;
+  width: 800px;
   background-color: #CCC;
+  display: flex;
+  justify-content: center;
+}
+
+.selection {
+  display: block;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  padding: 10px 10px;
+}
+#box {
+  display: flex;
+  justify-content: center;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tablist {
+  display: flex;
+  justify-content: space-evenly;
 }

@@ -31,7 +31,7 @@ const T2L2 = () => {
                     </TabPanel>
                 </div>
                 
-                <TabList>
+                <TabList className="tablist">
                     <Tab>Intro</Tab>
                     <Tab>Word list</Tab>
                     <Tab>Flash cards</Tab>

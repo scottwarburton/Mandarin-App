@@ -13,6 +13,8 @@ class App extends React.Component {
       topic: "",
       lesson: ""
     }
+    this.changeTopic = this.changeTopic.bind(this);
+    this.changeLesson = this.changeLesson.bind(this);
   }
   radio1 = (e) => {
     this.setState({
@@ -47,38 +49,33 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div id="app">
         <h1>Learning Mandarin</h1>
 
         {this.state.topic === "" && this.state.lesson === "" && <h3>Welcome to Learning Mandarin by Scott</h3>} 
 
         { this.state.topic === "" &&
           <form>
-            <label for="radio1">T1</label>
-            <input type="radio" id="radio1" name="topics" value="T1" onChange={this.radio1} style={{color: "blue"}} />
-            <label for="radio2">T2</label>
-            <input type="radio" id="radio2" name="topics" value="T2" onChange={this.radio2} style={{color: "blue"}} />
+            <input type="button" className="selection" name="topics" value="T1" onClick={this.radio1} style={{color: "blue"}} />
+            <input type="button" className="selection" name="topics" value="T2" onClick={this.radio2} style={{color: "blue"}} />
           </form>
         }
 
         { this.state.lesson === "" && this.state.topic !== "" &&
           <form>
-            <label for="radio3">L1</label>
-            <input type="radio" id="radio3" name="lessons" value="L1" onChange={this.radio3} style={{color: "blue"}} />
-            <label for="radio4">L2</label>
-            <input type="radio" id="radio4" name="lessons" value="L2" onChange={this.radio4} style={{color: "blue"}} />
+            <input type="button" className="selection" name="lessons" value="L1" onClick={this.radio3} style={{color: "blue"}} />
+            <input type="button" className="selection" name="lessons" value="L2" onClick={this.radio4} style={{color: "blue"}} />
           </form>
         }
 
         { this.state.topic !== "" && this.state.lesson !== "" &&
           <div>
-            <input type="button" value="change topic" onChange={this.changeTopic} />
-
-            <input type="button" value="change lesson" onChange={this.changeLesson} />
+            <input type="button" value="change topic" onClick={this.changeTopic} />
+            <input type="button" value="change lesson" onClick={this.changeLesson} />
           </div>
         }
 
-        <div>
+        <div id="box">
           {this.state.topic === "T1" && this.state.lesson === "L1" ? <T1L1 /> : null}
           {this.state.topic === "T1" && this.state.lesson === "L2" ? <T1L2 /> : null}
           {this.state.topic === "T2" && this.state.lesson === "L1" ? <T2L1 /> : null}
