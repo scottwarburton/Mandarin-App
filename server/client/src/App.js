@@ -6,6 +6,8 @@ import T1L2 from './components/T1L2'
 import T2L1 from "./components/T2L1"
 import T2L2 from './components/T2L1'
 
+
+
 class App extends React.Component {
   constructor() {
     super();
@@ -55,16 +57,16 @@ class App extends React.Component {
         {this.state.topic === "" && this.state.lesson === "" && <h3>Welcome to Learning Mandarin by Scott</h3>} 
 
         { this.state.topic === "" &&
-          <form>
-            <input type="button" className="selection" name="topics" value="T1" onClick={this.radio1} style={{color: "blue"}} />
-            <input type="button" className="selection" name="topics" value="T2" onClick={this.radio2} style={{color: "blue"}} />
+          <form className="selectionForm">
+            <input type="button" className="selection" name="topics" value="T1" onClick={this.radio1} />
+            <input type="button" className="selection" name="topics" value="T2" onClick={this.radio2} />
           </form>
         }
 
         { this.state.lesson === "" && this.state.topic !== "" &&
-          <form>
-            <input type="button" className="selection" name="lessons" value="L1" onClick={this.radio3} style={{color: "blue"}} />
-            <input type="button" className="selection" name="lessons" value="L2" onClick={this.radio4} style={{color: "blue"}} />
+          <form className="selectionForm">
+            <input type="button" className="selection" name="lessons" value="L1" onClick={this.radio3} />
+            <input type="button" className="selection" name="lessons" value="L2" onClick={this.radio4} />
           </form>
         }
 

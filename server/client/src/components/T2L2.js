@@ -8,7 +8,7 @@ const T2L2 = () => {
             <Tabs>
                 <div className="tabContent">
                     <TabPanel>
-                        <h3>Welcome to Topic 1 Lesson 2</h3>
+                        <h3>Welcome to Topic 2 Lesson 2</h3>
                     </TabPanel>
                     <TabPanel>
                         <h2>Word list</h2>

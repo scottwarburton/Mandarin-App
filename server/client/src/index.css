@@ -15,17 +15,42 @@ code {
 .tabContent {
   height: 500px;
   width: 800px;
-  background-color: #CCC;
+  background-color: hsl(252, 100%, 16%);
+  color: white;
   display: flex;
   justify-content: center;
 }
-
 .selection {
-  display: block;
-  width: 150px;
-  height: 30px;
-  cursor: pointer;
-  padding: 10px 10px;
+	box-shadow: 0px 0px 0px 1px hsl(252, 100%, 16%);
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid hsl(252, 100%, 16%);
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-size:16px;
+	padding:10px 30px;
+	text-decoration:none;
+}
+.selection:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.selection:active {
+	position:relative;
+	top:2px;
+}
+.selectionForm {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+[lang="zh"] .wordList1 {
+    font-family: 'Noto Sans', sans-serif;
 }
 #box {
   display: flex;
@@ -36,6 +61,8 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(124, 152, 210);
+  height: 100vh;
 }
 .tablist {
   display: flex;
