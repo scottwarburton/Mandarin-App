@@ -47,10 +47,12 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
 }
 [lang="zh"] .wordList1 {
     font-family: 'Noto Sans', sans-serif;
+}
+.wordListBox {
+  display: flex;
 }
 #box {
   display: flex;
