@@ -19,6 +19,7 @@ code {
   color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .selection {
 	box-shadow: 0px 0px 0px 1px hsl(252, 100%, 16%);
@@ -52,7 +53,11 @@ code {
     font-family: 'Noto Sans', sans-serif;
 }
 .wordListBox {
-  display: flex;
+  width: 800px;
+  height: 500px;
+  display: grid;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 #box {
   display: flex;
@@ -69,4 +74,17 @@ code {
 .tablist {
   display: flex;
   justify-content: space-evenly;
+}
+.flashcards {
+  width: 100px;
+  height: 80px;
+  background-color: #CCC;
+  padding: 10px;
+  border: 2px solid hsl(252, 100%, 16%);
+  color:hsl(252, 100%, 16%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
 }

@@ -1,31 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import FlashCardList from "./FlashCardList";
 
-const wordList = [
-    ["hello", "你好", ""],
-    ["goodbye", "再见", ""],
-    ["me", "我", ""],
-    ["you", "你", ""],
-    ["him/her", "他/她", ""],
-    ["plural", "们", ""],
-    ["thank you", "谢谢", ""],
-    ["name", "名字", ""],
-    ["yes", "是的", ""],
-    ["no", "不是", ""],
-    ["excuse me", "不好意思", ""],
-    ["you're welcome", "不客气", ""],
-    ["no problem", "没关系", ""],
-    ["recently", "最近", ""],
-    ["good", "好", ""],
-    ["not good", "不好", ""],
-    ["very", "很", ""],
-    ["and you?", "你呢", ""],
-    ["question character", "吗", ""],
-    ["how is", "怎么样", ""]
-]
-const T1L1 = () => { 
-
+function T1L1() { 
+    const [flashcards, setFlashcards] = useState(FLASHCARDS);
     return (
         <div id="LessonOne">
             <Tabs>
@@ -34,20 +13,10 @@ const T1L1 = () => {
                         <h3>Welcome to Topic 1 Lesson 1</h3>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Word list</h2>
-                        <div className="wordListBox">
-                            <div className="wordList">{wordList.map(item => (
-                                <div>{item[0]}</div>
-                                ))}
-                            </div>
-                            <div className="wordList">{wordList.map(item => (
-                                <div>{item[1]}</div>
-                                ))}
-                            </div>
-                        </div>
+                        <h2>Word List</h2>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Flash cards</h2>
+                        <FlashCardList flashcards={flashcards} />
                     </TabPanel>
                     <TabPanel>
                         <h2>Practise sentence here</h2>
@@ -68,5 +37,98 @@ const T1L1 = () => {
         </div>
     )
 }
+
+const FLASHCARDS = [
+    {
+        id: 1,
+        english: "hello",
+        mandarin: "你好"
+    },
+    {
+        id: 2,
+        english: "goodbye",
+        mandarin: "再见"
+    },
+    {
+        id: 3,
+        english: "he/her",
+        mandarin: "他/她"
+    },
+    {
+        id: 4,
+        english: "plural",
+        mandarin: "们"
+    },
+    {
+        id: 5,
+        english: "thank you",
+        mandarin: "谢谢"
+    },
+    {
+        id: 6,
+        english: "name",
+        mandarin: "名字"
+    },
+    {
+        id: 7,
+        english: "yes",
+        mandarin: "是的"
+    },
+    {
+        id: 8,
+        english: "no",
+        mandarin: "不是"
+    },
+    {
+        id: 9,
+        english: "excuse me",
+        mandarin: "不好意思"
+    },
+    {
+        id: 10,
+        english: "you're welcome",
+        mandarin: "不客气"
+    },
+    {
+        id: 11,
+        english: "no problem",
+        mandarin: "没关系"
+    },
+    {
+        id: 12,
+        english: "recently",
+        mandarin: "最近"
+    },
+    {
+        id: 13,
+        english: "good",
+        mandarin: "好"
+    },
+    {
+        id: 14,
+        english: "not good",
+        mandarin: "不好"
+    },
+    {
+        id: 15,
+        english: "very",
+        mandarin: "很"
+    },
+    {
+        id: 16,
+        english: "and you?",
+        mandarin: "你呢"
+    },
+    {
+        id: 17,
+        english: "question particle",
+        mandarin: "吗"
+    },
+    {
+        id: 18,
+        english: "how is",
+        mandarin: "怎么样"
+    }
+]
 
 export default T1L1
