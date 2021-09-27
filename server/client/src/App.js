@@ -747,8 +747,8 @@ const TECHNOLOGY = [
   {
     id: 17,
     english: "keyboard",
-    mandarin: "jiànpán",
-    pinyin: "键盘"
+    mandarin: "键盘",
+    pinyin: "jiànpán"
   },
   {
     id: 18,
