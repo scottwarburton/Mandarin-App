@@ -6,12 +6,7 @@ import Lesson from "./components/Lesson"
 function App() {
   const [topic, setTopic] = useState("");
   const [lesson, setLesson] = useState("");
-  /*
-  const [greetings, setGreetings] = useState(GREETINGS);
-  const [activities, setActivities] = useState(ACTIVITIES);
-  const [transport, setTransport] = useState(TRANSPORT);
-  const [locations, setLocations] = useState(LOCATIONS);
-  */
+
   return (
     <div id="app">
       <h1>Learning Mandarin</h1>
@@ -23,6 +18,7 @@ function App() {
           <h3>Topics:</h3>
           <button className="selection" name="topics" onClick={() => setTopic("Everyday")}>Everyday</button>
           <button className="selection" name="topics" onClick={() => setTopic("Travel")}>Travel</button>
+          <button className="selection" name="topics" onClick={() => setTopic("Industries")}>Industries</button>
         </div>
       }
       { topic === "Everyday" && lesson === "" &&
@@ -36,6 +32,12 @@ function App() {
         <form className="selectionForm">
           <button className="selection" name="lessons" onClick={() => setLesson("Transport")}>Transport</button>
           <button className="selection" name="lessons" onClick={() => setLesson("Locations")}>Locations</button>
+        </form>
+      }
+      { topic === "Industries" && lesson === "" &&
+        <form className="selectionForm">
+          <button className="selection" name="lessons" onClick={() => setLesson("Economics")}>Economics</button>
+          <button className="selection" name="lessons" onClick={() => setLesson("Technology")}>Technology</button>
         </form>
       }
 
@@ -54,6 +56,8 @@ function App() {
         {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} /> : null}
         {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} /> : null}
         {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} /> : null}
+        {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} /> : null}
+        {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} /> : null}
       </div>
     </div>
   );
@@ -175,7 +179,8 @@ const GREETINGS = [
 ]
 const GREETINGS_SENTENCES = [
   "你好，最近怎么样",
-  "你好，最近怎么样"
+  "很好谢谢，你呢",
+  "不好意思，你叫什么名字"
 ]
 
 const ACTIVITIES = [
@@ -289,8 +294,9 @@ const ACTIVITIES = [
   }
 ]
 const ACTIVITIES_SENTENCES = [
-  "我喜欢去电影院",
-  "你好，最近怎么样"
+  "我喜欢去电影院，你想去吗",
+  "我不明白你，请再说一遍",
+  "听起来挺好的"
 ]
 
 const TRANSPORT = [
@@ -405,7 +411,8 @@ const TRANSPORT = [
 ]
 const TRANSPORT_SENTENCES = [
   "我迟到了因为公车太慢了",
-  "你好，最近怎么样"
+  "为什么你乘坐公车",
+  "因为火车票太贵了，并且火车站太远"
 ]
 
 const LOCATIONS = [
@@ -519,6 +526,357 @@ const LOCATIONS = [
   }
 ]
 const LOCATIONS_SENTENCES = [
-  "我来自澳洲。现在我住在墨尔本，但是我想住在上海",
-  "你好，最近怎么样"
+  "我来自澳洲",
+  "现在我住在墨尔本，但是我想住在上海",
+  "你来自哪个城市"
 ]
+
+const ECONOMICS = [
+  {
+      id: 1,
+      english: "economy",
+      mandarin: "经济",
+      pinyin: "jīngjì"
+  },
+  {
+    id: 2,
+    english: "growth",
+    mandarin: "发展",
+    pinyin: "fāzhǎn"
+  },
+  {
+    id: 3,
+    english: "salary",
+    mandarin: "工资",
+    pinyin: "gōngzī"
+  },
+  {
+    id: 4,
+    english: "money",
+    mandarin: "钱",
+    pinyin: "qián"
+  },
+  {
+    id: 5,
+    english: "market",
+    mandarin: "市场",
+    pinyin: "shìchǎng"
+  },
+  {
+    id: 6,
+    english: "bank",
+    mandarin: "银行",
+    pinyin: "yínháng"
+  },
+  {
+    id: 7,
+    english: "save",
+    mandarin: "保存",
+    pinyin: "bǎocún"
+  },
+  {
+    id: 8,
+    english: "debt",
+    mandarin: "债务",
+    pinyin: "zhàiwù"
+  },
+  {
+    id: 9,
+    english: "company",
+    mandarin: "公司",
+    pinyin: "gōngsī"
+  },
+  {
+    id: 10,
+    english: "investment",
+    mandarin: "投资",
+    pinyin: "tóuzī"
+  },
+  {
+    id: 11,
+    english: "attract (investment)",
+    mandarin: "吸引",
+    pinyin: "xīyǐn"
+  },
+  {
+    id: 12,
+    english: "shareholder",
+    mandarin: "股东",
+    pinyin: "Gǔdōng"
+  },
+  {
+    id: 13,
+    english: "revenue",
+    mandarin: "收入",
+    pinyin: "shōurù"
+  },
+  {
+    id: 14,
+    english: "profit",
+    mandarin: "利润",
+    pinyin: "lìrùn"
+  },
+  {
+    id: 15,
+    english: "assets",
+    mandarin: "资产",
+    pinyin: "zīchǎn"
+  },
+  {
+    id: 16,
+    english: "credit card",
+    mandarin: "信用卡",
+    pinyin: "xìnyòngkǎ"
+  },
+  {
+    id: 17,
+    english: "cash",
+    mandarin: "现金",
+    pinyin: "xiànjīn"
+  },
+  {
+    id: 18,
+    english: "wallet",
+    mandarin: "钱包",
+    pinyin: "qiánbāo"
+  }
+]
+const ECONOMICS_SENTENCES = [
+  "A",
+  "B",
+  "C"
+]
+
+const TECHNOLOGY = [
+  {
+      id: 1,
+      english: "technology",
+      mandarin: "技术",
+      pinyin: "jìshù"
+  },
+  {
+    id: 2,
+    english: "computer",
+    mandarin: "电脑",
+    pinyin: "diànnǎo"
+  },
+  {
+    id: 3,
+    english: "laptop",
+    mandarin: "手提电脑",
+    pinyin: "shǒutí diànnǎo"
+  },
+  {
+    id: 4,
+    english: "mobile",
+    mandarin: "手机",
+    pinyin: "shǒujī"
+  },
+  {
+    id: 5,
+    english: "internet",
+    mandarin: "互联网",
+    pinyin: "hùliánwǎng"
+  },
+  {
+    id: 6,
+    english: "program",
+    mandarin: "程序",
+    pinyin: "chéngxù"
+  },
+  {
+    id: 7,
+    english: "app",
+    mandarin: "应用",
+    pinyin: "yìngyòng"
+  },
+  {
+    id: 8,
+    english: "programming",
+    mandarin: "编程",
+    pinyin: "biānchéng"
+  },
+  {
+    id: 9,
+    english: "wireless",
+    mandarin: "无线",
+    pinyin: "wúxiàn"
+  },
+  {
+    id: 10,
+    english: "website",
+    mandarin: "网站",
+    pinyin: "wǎngzhàn"
+  },
+  {
+    id: 11,
+    english: "electricity",
+    mandarin: "电",
+    pinyin: "diàn"
+  },
+  {
+    id: 12,
+    english: "charger",
+    mandarin: "充电器",
+    pinyin: "chōngdiàn qì"
+  },
+  {
+    id: 13,
+    english: "email",
+    mandarin: "电子邮件",
+    pinyin: "diànzǐ yóujiàn"
+  },
+  {
+    id: 14,
+    english: "TV",
+    mandarin: "电视",
+    pinyin: "diànshì"
+  },
+  {
+    id: 15,
+    english: "monitor/screen",
+    mandarin: "显示器",
+    pinyin: "xiǎnshìqì"
+  },
+  {
+    id: 16,
+    english: "bluetooth",
+    mandarin: "蓝牙",
+    pinyin: "lányá"
+  },
+  {
+    id: 17,
+    english: "keyboard",
+    mandarin: "jiànpán",
+    pinyin: "键盘"
+  },
+  {
+    id: 18,
+    english: "mouse",
+    mandarin: "鼠标",
+    pinyin: "shǔbiāo"
+  }
+]
+const TECHNOLOGY_SENTENCES = [
+  "A",
+  "B",
+  "C"
+]
+
+/*
+const ECONOMICS = [
+  {
+      id: 1,
+      english: "",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const ECONOMICS_SENTENCES = [
+  "",
+  "",
+  ""
+]
+*/

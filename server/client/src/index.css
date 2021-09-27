@@ -91,7 +91,7 @@ code {
 .sentences {
   font-size: 40px;
   width: 700px;
-  height: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
