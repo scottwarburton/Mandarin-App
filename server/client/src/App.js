@@ -6,11 +6,12 @@ import Lesson from "./components/Lesson"
 function App() {
   const [topic, setTopic] = useState("");
   const [lesson, setLesson] = useState("");
+  /*
   const [greetings, setGreetings] = useState(GREETINGS);
-  const [introduction, setIntroduction] = useState(INTRODUCTION);
+  const [activities, setActivities] = useState(ACTIVITIES);
   const [transport, setTransport] = useState(TRANSPORT);
   const [locations, setLocations] = useState(LOCATIONS);
-
+  */
   return (
     <div id="app">
       <h1>Learning Mandarin</h1>
@@ -28,7 +29,7 @@ function App() {
         <div className="selectionForm">
           <h3>Lessons:</h3>
           <button className="selection" name="lessons" onClick={() => setLesson("Greetings")}>Greetings</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Introduction")}>Introduction</button>
+          <button className="selection" name="lessons" onClick={() => setLesson("Activities")}>Activities</button>
         </div>
       }
       { topic === "Travel" && lesson === "" &&
@@ -49,10 +50,10 @@ function App() {
       }
 
       <div id="box">
-        {lesson === "Greetings" ? <Lesson topic="Greetings" flashcards={greetings} /> : null}
-        {lesson === "Introduction" ? <Lesson topic="Introduction" flashcards={introduction} /> : null}
-        {lesson === "Transport" ? <Lesson topic="Transport" flashcards={transport} /> : null}
-        {lesson === "Locations" ? <Lesson topic="Locations" flashcards={locations} /> : null}
+        {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} /> : null}
+        {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} /> : null}
+        {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} /> : null}
+        {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} /> : null}
       </div>
     </div>
   );
@@ -172,116 +173,126 @@ const GREETINGS = [
       pinyin: "zěnme yàng"
   }
 ]
-const INTRODUCTION = [
+const GREETINGS_SENTENCES = [
+  "你好，最近怎么样",
+  "你好，最近怎么样"
+]
+
+const ACTIVITIES = [
   {
       id: 1,
-      english: "",
-      mandarin: "",
-      pinyin: ""
+      english: "eat",
+      mandarin: "吃",
+      pinyin: "chī"
   },
   {
     id: 2,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "drink",
+    mandarin: "喝",
+    pinyin: "hē"
   },
   {
     id: 3,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "read",
+    mandarin: "读",
+    pinyin: "dú"
   },
   {
     id: 4,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "write",
+    mandarin: "写",
+    pinyin: "xiě"
   },
   {
     id: 5,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "walk",
+    mandarin: "走",
+    pinyin: "zǒu"
   },
   {
     id: 6,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "watch",
+    mandarin: "看",
+    pinyin: "kàn"
   },
   {
     id: 7,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "like",
+    mandarin: "喜欢",
+    pinyin: "xǐhuān"
   },
   {
     id: 8,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "want",
+    mandarin: "要",
+    pinyin: "yào"
   },
   {
     id: 9,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "love",
+    mandarin: "爱",
+    pinyin: "ai"
   },
   {
     id: 10,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "think",
+    mandarin: "觉得",
+    pinyin: "juédé"
   },
   {
     id: 11,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "would like",
+    mandarin: "想",
+    pinyin: "xiǎng"
   },
   {
     id: 12,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "say",
+    mandarin: "说",
+    pinyin: "shuō"
   },
   {
     id: 13,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "hear",
+    mandarin: "听",
+    pinyin: "tīng"
   },
   {
     id: 14,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "understand",
+    mandarin: "明白",
+    pinyin: "míngbái"
   },
   {
     id: 15,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "go",
+    mandarin: "去",
+    pinyin: "qù"
   },
   {
     id: 16,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "come",
+    mandarin: "来",
+    pinyin: "lái"
   },
   {
     id: 17,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "swim",
+    mandarin: "游泳",
+    pinyin: "yóuyǒng"
   },
   {
     id: 18,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "run",
+    mandarin: "跑步",
+    pinyin: "pǎobù"
   }
 ]
+const ACTIVITIES_SENTENCES = [
+  "我喜欢去电影院",
+  "你好，最近怎么样"
+]
+
 const TRANSPORT = [
   {
     id: 1,
@@ -392,6 +403,11 @@ const TRANSPORT = [
     pinyin: "chídàole"
   }
 ]
+const TRANSPORT_SENTENCES = [
+  "我迟到了因为公车太慢了",
+  "你好，最近怎么样"
+]
+
 const LOCATIONS = [
   {
       id: 1,
@@ -501,4 +517,8 @@ const LOCATIONS = [
     mandarin: "州",
     pinyin: "zhōu"
   }
+]
+const LOCATIONS_SENTENCES = [
+  "我来自澳洲。现在我住在墨尔本，但是我想住在上海",
+  "你好，最近怎么样"
 ]

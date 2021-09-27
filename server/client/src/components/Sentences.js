@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Sentences = ({ flashcards }) => {
+const Sentences = ({ sentences }) => {
     return (
-        <div>
-            {flashcards.map(item => {
-                return <p>{item.sentence}</p>
+        <ul className="sentences">
+            {sentences.map(item => {
+                return <li key={item}>{item}</li>
             })}
-        </div>
+        </ul>
     )
 }
 

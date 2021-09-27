@@ -11,7 +11,7 @@ function Lesson(props) {
             <Tabs>
                 <div className="tabContent">
                     <TabPanel>
-                        <h3>Welcome to {props.topic}</h3>
+                        <h3>Welcome to {props.lesson}</h3>
                     </TabPanel>
                     <TabPanel>
                         <WordList flashcards={props.flashcards} />
@@ -20,7 +20,7 @@ function Lesson(props) {
                         <FlashCardList flashcards={props.flashcards} />
                     </TabPanel>
                     <TabPanel>
-                        <Sentences flashcards={props.flashcards} />
+                        <Sentences sentences={props.sentences} />
                     </TabPanel>
                     <TabPanel>
                         <h2>Quiz time</h2>
