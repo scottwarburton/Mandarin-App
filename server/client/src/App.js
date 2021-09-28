@@ -422,93 +422,93 @@ const SHOPPING_SENTENCES = [
 const CASUALTALK = [
   {
       id: 1,
-      english: "聊天",
-      mandarin: "",
-      pinyin: ""
+      english: "chat",
+      mandarin: "聊天",
+      pinyin: "liáotiān"
   },
   {
     id: 2,
-    english: "吃了吗",
-    mandarin: "",
-    pinyin: ""
+    english: "have you eaten?",
+    mandarin: "吃了吗",
+    pinyin: "chīle ma"
   },
   {
     id: 3,
-    english: "算了吧",
-    mandarin: "",
-    pinyin: ""
+    english: "never mind",
+    mandarin: "算了吧",
+    pinyin: "suànle ba"
   },
   {
     id: 4,
-    english: "我不管",
-    mandarin: "",
-    pinyin: ""
+    english: "I don't care",
+    mandarin: "我不管",
+    pinyin: "wǒ bùguǎn"
   },
   {
     id: 5,
-    english: "真的假的",
-    mandarin: "",
-    pinyin: ""
+    english: "really?",
+    mandarin: "真的假的",
+    pinyin: "zhēn de jiǎ de"
   },
   {
     id: 6,
-    english: "麻烦",
-    mandarin: "",
-    pinyin: ""
+    english: "what a pain",
+    mandarin: "麻烦",
+    pinyin: "máfan"
   },
   {
     id: 7,
-    english: "想的美",
-    mandarin: "",
-    pinyin: ""
+    english: "you wish",
+    mandarin: "想的美",
+    pinyin: "xiǎng dì měi"
   },
   {
     id: 8,
-    english: "但愿吧",
-    mandarin: "",
-    pinyin: ""
+    english: "I hope so",
+    mandarin: "但愿吧",
+    pinyin: "dàn yuàn ba"
   },
   {
     id: 9,
-    english: "原来如此",
-    mandarin: "",
-    pinyin: ""
+    english: "So it's like that",
+    mandarin: "原来如此",
+    pinyin: "yuánlái rúcǐ"
   },
   {
     id: 10,
-    english: "那倒是",
-    mandarin: "",
-    pinyin: ""
+    english: "that's true",
+    mandarin: "那倒是",
+    pinyin: "nà dǎoshì"
   },
   {
     id: 11,
-    english: "开玩笑的",
-    mandarin: "",
-    pinyin: ""
+    english: "I'm kidding",
+    mandarin: "我开玩笑的",
+    pinyin: "wǒ kāiwánxiào de"
   },
   {
     id: 12,
-    english: "谁说的",
-    mandarin: "",
-    pinyin: ""
+    english: "who said that?",
+    mandarin: "谁说的",
+    pinyin: "shéi shuō de"
   },
   {
     id: 13,
-    english: "那怎么行啊",
-    mandarin: "",
-    pinyin: ""
+    english: "how is that okay?",
+    mandarin: "那怎么行啊",
+    pinyin: "nà zěnme xíng a"
   },
   {
     id: 14,
-    english: "真是个悲剧",
-    mandarin: "",
-    pinyin: ""
+    english: "what a tragedy",
+    mandarin: "真是个悲剧",
+    pinyin: "zhēnshi gè bēijù"
   },
   {
     id: 15,
-    english: "不好笑",
-    mandarin: "",
-    pinyin: ""
+    english: "not funny",
+    mandarin: "不好笑",
+    pinyin: "bù hǎoxiào"
   },
   {
     id: 16,
@@ -537,111 +537,111 @@ const CASUALTALK_SENTENCES = [
 const GRAMMAR = [
   {
       id: 1,
-      english: "",
+      english: "character",
       mandarin: "汉子",
-      pinyin: ""
+      pinyin: "hànzi"
   },
   {
     id: 2,
-    english: "",
+    english: "word",
     mandarin: "单词 / 词语",
-    pinyin: ""
+    pinyin: "dāncí / cíyǔ"
   },
   {
     id: 3,
-    english: "",
+    english: "letter",
     mandarin: "子母",
-    pinyin: ""
+    pinyin: "zǐ mǔ"
   },
   {
     id: 4,
-    english: "",
+    english: "spelling",
     mandarin: "拼写",
-    pinyin: ""
+    pinyin: "pīnxiě"
   },
   {
     id: 5,
-    english: "",
+    english: "sentence",
     mandarin: "句子",
-    pinyin: ""
+    pinyin: "jùzi"
   },
   {
     id: 6,
-    english: "",
+    english: "language",
     mandarin: "语言",
-    pinyin: ""
+    pinyin: "yǔyán"
   },
   {
     id: 7,
-    english: "",
+    english: "pronunciation",
     mandarin: "发音 / 读音",
-    pinyin: ""
+    pinyin: "fāyīn / 读音"
   },
   {
     id: 8,
-    english: "",
+    english: "tone",
     mandarin: "声调",
-    pinyin: ""
+    pinyin: "shēngdiào"
   },
   {
     id: 9,
-    english: "",
+    english: "fluent",
     mandarin: "流利",
-    pinyin: ""
+    pinyin: "liúlì"
   },
   {
     id: 10,
-    english: "",
+    english: "pinyin",
     mandarin: "拼音",
-    pinyin: ""
+    pinyin: "pīnyīn"
   },
   {
     id: 11,
-    english: "",
+    english: "simplified Chinese",
     mandarin: "简体中文",
-    pinyin: ""
+    pinyin: "jiǎntǐ zhōngwén"
   },
   {
     id: 12,
-    english: "",
+    english: "traditional Chinese",
     mandarin: "繁体中文",
-    pinyin: ""
+    pinyin: "fántǐ zhōngwén"
   },
   {
     id: 13,
-    english: "",
+    english: "understand",
     mandarin: "明白 / 懂 / 了解",
-    pinyin: ""
+    pinyin: "míngbái / dǒng / liǎojiě"
   },
   {
     id: 14,
     english: "paragraph",
     mandarin: "段落",
-    pinyin: ""
+    pinyin: "duànluò"
   },
   {
     id: 15,
     english: "dialogue",
     mandarin: "对话",
-    pinyin: ""
+    pinyin: "duìhuà"
   },
   {
     id: 16,
     english: "article",
     mandarin: "文章",
-    pinyin: ""
+    pinyin: "wénzhāng"
   },
   {
     id: 17,
     english: "reading (n)",
     mandarin: "阅读",
-    pinyin: ""
+    pinyin: "yuèdú"
   },
   {
     id: 18,
     english: "short passage",
     mandarin: "短话",
-    pinyin: ""
+    pinyin: "duǎnhuà"
   }
 ]
 const GRAMMAR_SENTENCES = [
