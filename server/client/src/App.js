@@ -26,6 +26,9 @@ function App() {
           <h3>Lessons:</h3>
           <button className="selection" name="lessons" onClick={() => setLesson("Greetings")}>Greetings</button>
           <button className="selection" name="lessons" onClick={() => setLesson("Activities")}>Activities</button>
+          <button className="selection" name="lessons" onClick={() => setLesson("Shopping")}>Shopping</button>
+          <button className="selection" name="lessons" onClick={() => setLesson("Casual Talk")}>Casual talk</button>
+          <button className="selection" name="lessons" onClick={() => setLesson("Grammar")}>Grammar</button>
         </div>
       }
       { topic === "Travel" && lesson === "" &&
@@ -54,6 +57,9 @@ function App() {
       <div id="box">
         {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} /> : null}
         {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} /> : null}
+        {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} /> : null}
+        {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} /> : null}
+        {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} /> : null}
         {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} /> : null}
         {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} /> : null}
         {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} /> : null}
@@ -297,6 +303,351 @@ const ACTIVITIES_SENTENCES = [
   "我喜欢去电影院，你想去吗",
   "我不明白你，请再说一遍",
   "听起来挺好的"
+]
+const SHOPPING = [
+  {
+      id: 1,
+      english: "buy",
+      mandarin: "买",
+      pinyin: "mǎi"
+  },
+  {
+    id: 2,
+    english: "sell",
+    mandarin: "卖",
+    pinyin: "mài"
+  },
+  {
+    id: 3,
+    english: "receipt",
+    mandarin: "支票 / 收据",
+    pinyin: "zhīpiào / shōujù"
+  },
+  {
+    id: 4,
+    english: "change (money)",
+    mandarin: "领钱",
+    pinyin: "lǐng qián"
+  },
+  {
+    id: 5,
+    english: "to pay",
+    mandarin: "支付",
+    pinyin: "zhīfù"
+  },
+  {
+    id: 6,
+    english: "payment",
+    mandarin: "付款",
+    pinyin: "fùkuǎn"
+  },
+  {
+    id: 7,
+    english: "WePay",
+    mandarin: "微信",
+    pinyin: "Wēixìn"
+  },
+  {
+    id: 8,
+    english: "AliPay",
+    mandarin: "支付宝",
+    pinyin: "Zhīfùbǎo"
+  },
+  {
+    id: 9,
+    english: "cheap",
+    mandarin: "便宜",
+    pinyin: "piányí"
+  },
+  {
+    id: 10,
+    english: "expensive",
+    mandarin: "贵",
+    pinyin: "guì"
+  },
+  {
+    id: 11,
+    english: "bag",
+    mandarin: "包 / 袋子",
+    pinyin: "bāo / dàizi"
+  },
+  {
+    id: 12,
+    english: "need anything else",
+    mandarin: "还有别的吗",
+    pinyin: "hái yǒu bié de ma"
+  },
+  {
+    id: 13,
+    english: "welcome",
+    mandarin: "欢迎光临",
+    pinyin: "huānyíng guānglín"
+  },
+  {
+    id: 14,
+    english: "take care",
+    mandarin: "请慢走",
+    pinyin: "qǐng màn zǒu"
+  },
+  {
+    id: 15,
+    english: "pay the bill",
+    mandarin: "买单",
+    pinyin: "mǎidān"
+  },
+  {
+    id: 16,
+    english: "menu",
+    mandarin: "菜单",
+    pinyin: "càidān"
+  },
+  {
+    id: 17,
+    english: "shopping",
+    mandarin: "购物",
+    pinyin: "gòuwù"
+  },
+  {
+    id: 18,
+    english: "how much",
+    mandarin: "多少钱",
+    pinyin: "duōshǎo qián"
+  }
+]
+const SHOPPING_SENTENCES = [
+  "你们还想别的吗",
+  "我可以支付吗",
+  "这些多少钱"
+]
+const CASUALTALK = [
+  {
+      id: 1,
+      english: "聊天",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "吃了吗",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "算了吧",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "我不管",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "真的假的",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "麻烦",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "想的美",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "但愿吧",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "原来如此",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "那倒是",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "开玩笑的",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "谁说的",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "那怎么行啊",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "真是个悲剧",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "不好笑",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const CASUALTALK_SENTENCES = [
+  "不管你喜不喜欢..",
+  "",
+  ""
+]
+const GRAMMAR = [
+  {
+      id: 1,
+      english: "",
+      mandarin: "汉子",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "",
+    mandarin: "单词 / 词语",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "",
+    mandarin: "子母",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "",
+    mandarin: "拼写",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "",
+    mandarin: "句子",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "",
+    mandarin: "语言",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "",
+    mandarin: "发音 / 读音",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "",
+    mandarin: "声调",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "",
+    mandarin: "流利",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "",
+    mandarin: "拼音",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "",
+    mandarin: "简体中文",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "",
+    mandarin: "繁体中文",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "",
+    mandarin: "明白 / 懂 / 了解",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "paragraph",
+    mandarin: "段落",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "dialogue",
+    mandarin: "对话",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "article",
+    mandarin: "文章",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "reading (n)",
+    mandarin: "阅读",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "short passage",
+    mandarin: "短话",
+    pinyin: ""
+  }
+]
+const GRAMMAR_SENTENCES = [
+  "",
+  "",
+  ""
 ]
 
 const TRANSPORT = [
@@ -879,4 +1230,24 @@ const ECONOMICS_SENTENCES = [
   "",
   ""
 ]
+
+Phrases
+甚至连x也y  even though x also y
+还可以说
+举办会议
+最大的挑战
+
+Conjunctions
+其实
+确实
+老实说
+热真的
+反正
+而且
+另外
+然而
+虽然
+并且
+
+
 */
