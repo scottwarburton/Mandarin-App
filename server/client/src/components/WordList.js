@@ -15,7 +15,12 @@ const WordList = ({ flashcards }) => {
                         <td>{item.english}</td>
                         <td>{item.mandarin}</td>
                         <td>{item.pinyin}</td>
-                        <td><button/></td>
+                        <td>
+                            <form action="/insert_word/" method="POST">
+                                <input name="content" value={item.mandarin} type="hidden" />
+                                <button type="submit" />
+                            </form>
+                        </td>
                     </tr>
                 )
             })}

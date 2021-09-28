@@ -28,7 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'corsheaders',
+    'rest_framework',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -39,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -71,8 +74,11 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'WordsDB',   #BASE_DIR / 'db.sqlite3'
+        'USER': 'postgres',
+        'PASSWORD': 'postgresScott1',
+        'HOST': 'localhost',
     }
 }
 
@@ -122,4 +128,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "client/build/static"),
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
 ]
