@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from "axios"
 
 const WordList = ({ flashcards }) => {
+    const [saveWord, setSaveWord] = useState("");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await axios.post("add_words/", saveWord);
+        setSaveWord("");
+    }
     return (
         <table>
             <tr>
@@ -16,10 +23,7 @@ const WordList = ({ flashcards }) => {
                         <td>{item.mandarin}</td>
                         <td>{item.pinyin}</td>
                         <td>
-                            <form action="/insert_word/" method="POST">
-                                <input name="content" value={item.mandarin} type="hidden" />
-                                <button type="submit" />
-                            </form>
+                            <button type="submit" onClick={() => setSaveWord(`${item.mandarin}`)} onSubmit={(e) => handleSubmit(e)} />
                         </td>
                     </tr>
                 )

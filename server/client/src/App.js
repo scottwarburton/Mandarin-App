@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from "react"
 import Lesson from "./components/Lesson"
-
+import Saved from "./components/Saved"
 
 function App() {
   const [topic, setTopic] = useState("");
@@ -21,6 +21,9 @@ function App() {
           <button className="selection" name="topics" onClick={() => setTopic("Industries")}>Industries</button>
         </div>
       }
+
+      <Saved />
+      
       { topic === "Everyday" && lesson === "" &&
         <div className="selectionForm">
           <h3>Lessons:</h3>
