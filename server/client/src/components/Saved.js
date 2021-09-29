@@ -11,10 +11,12 @@ class Saved extends React.Component {
     componentDidMount() {
         this.refreshList();
     }
-    refreshList = () => {
+    refreshList() {
         axios
-            .get("saved_words/")
-            .then((res) => this.setState({ wordList: res.data }))
+            .get("/api-auth/words/")
+            //.then((res) => this.setState({ wordList: res.data[0].content }))
+            .then((res) => this.setState({ wordList: res.data[0].content }))
+            .then((res) => this.setState({ wordList: res.data[0].id }))
             .catch((err) => console.log(err));
     };
     /*

@@ -130,6 +130,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "client/build/static"),
 ]
 
-CORS_ORIGIN_WHITELIST = [
+CORS_ORIGIN_WHITELIST = [       #added
     'http://localhost:3000',
 ]
+
+REST_FRAMEWORK = {              #added
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
