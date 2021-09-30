@@ -11,13 +11,15 @@ class Saved extends React.Component {
     componentDidMount() {
         this.refreshList();
     }
-    refreshList() {
-        axios
+    async refreshList() {
+        let response = await axios
             .get("/api-auth/words/")
             //.then((res) => this.setState({ wordList: res.data[0].content }))
-            .then((res) => this.setState({ wordList: res.data[0].content }))
-            .then((res) => this.setState({ wordList: res.data[0].id }))
+            .then((res) => res.data)
             .catch((err) => console.log(err));
+        for (let i = 0; i < response.length; i++) {
+            this.setState((prev) => ({ wordList: [...prev.wordList, response[i].content] })
+        )}
     };
     /*
     renderItems() {
@@ -35,7 +37,7 @@ class Saved extends React.Component {
             <div>
                 <h3>saved</h3>
                 <div>
-                    {this.state.wordList}
+                   {this.state.wordList}
                 </div>
                 <h3>end saved</h3>
             </div>
