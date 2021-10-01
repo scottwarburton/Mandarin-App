@@ -6,6 +6,7 @@ import Saved from "./components/Saved"
 function App() {
   const [topic, setTopic] = useState("");
   const [lesson, setLesson] = useState("");
+  const [saved, setSaved] = useState(false);
 
   return (
     <div id="app">
@@ -13,7 +14,26 @@ function App() {
 
       {topic === "" && lesson === "" && <h3>Welcome to Learning Mandarin by Scott</h3>} 
 
-      { topic === "" &&
+      { !saved && <button className="selection" name="saved" onClick={() => {
+        setTopic("");
+        setLesson("");
+        setSaved(true);
+        }}>Saved Words
+        </button>
+      }
+      { saved && 
+        <div>
+          <button className="selection" name="home" onClick={() => {
+            setTopic("");
+            setLesson("");
+            setSaved(false);
+            }}>Home
+          </button>
+          <Saved />
+        </div>
+      }
+
+      { topic === "" && !saved &&
         <div className="selectionForm">
           <h3>Topics:</h3>
           <button className="selection" name="topics" onClick={() => setTopic("Everyday")}>Everyday</button>
@@ -21,10 +41,8 @@ function App() {
           <button className="selection" name="topics" onClick={() => setTopic("Industries")}>Industries</button>
         </div>
       }
-
-      <Saved />
       
-      { topic === "Everyday" && lesson === "" &&
+      { topic === "Everyday" && lesson === "" && !saved &&
         <div className="selectionForm">
           <h3>Lessons:</h3>
           <button className="selection" name="lessons" onClick={() => setLesson("Greetings")}>Greetings</button>
@@ -34,13 +52,14 @@ function App() {
           <button className="selection" name="lessons" onClick={() => setLesson("Grammar")}>Grammar</button>
         </div>
       }
-      { topic === "Travel" && lesson === "" &&
+
+      { topic === "Travel" && lesson === "" && !saved &&
         <form className="selectionForm">
           <button className="selection" name="lessons" onClick={() => setLesson("Transport")}>Transport</button>
           <button className="selection" name="lessons" onClick={() => setLesson("Locations")}>Locations</button>
         </form>
       }
-      { topic === "Industries" && lesson === "" &&
+      { topic === "Industries" && lesson === "" && !saved &&
         <form className="selectionForm">
           <button className="selection" name="lessons" onClick={() => setLesson("Economics")}>Economics</button>
           <button className="selection" name="lessons" onClick={() => setLesson("Technology")}>Technology</button>

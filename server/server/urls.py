@@ -19,8 +19,6 @@ router.register(r'words', WordView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name="word"),
     path('api-auth/', include(router.urls)),
-    path('saved_words/', views.saved_words),
-    path('add_words/', views.add_words),
 ]

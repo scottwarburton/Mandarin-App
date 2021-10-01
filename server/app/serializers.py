@@ -4,4 +4,4 @@ from .models import Words
 class WordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Words
-        fields = ('id', 'content')
+        fields = ('id', 'englishWord', 'mandarinWord', 'pinyinWord')

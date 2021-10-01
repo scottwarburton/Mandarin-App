@@ -2,11 +2,24 @@ import React, { useState } from 'react'
 import axios from "axios"
 
 const WordList = ({ flashcards }) => {
-    const [saveWord, setSaveWord] = useState("");
+    const [englishWord, setEnglishWord] = useState("");
+    const [mandarinWord, setMandarinWord] = useState("");
+    const [pinyinWord, setPinyinWord] = useState("");
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("add_words/", saveWord);
-        setSaveWord("");
+        let savedWord = {
+            englishWord: englishWord,
+            mandarinWord: mandarinWord,
+            pinyinWord: pinyinWord
+        }
+        await axios.post("", savedWord)
+        .then(function (response) {
+            console.log(response);
+        })
+        setEnglishWord("");
+        setMandarinWord("");
+        setPinyinWord("");
     }
     return (
         <table>
@@ -23,7 +36,14 @@ const WordList = ({ flashcards }) => {
                         <td>{item.mandarin}</td>
                         <td>{item.pinyin}</td>
                         <td>
-                            <button type="submit" onClick={() => setSaveWord(`${item.mandarin}`)} onSubmit={(e) => handleSubmit(e)} />
+                            <form onSubmit={(e) => handleSubmit(e)}>
+                                <button type="submit" onClick={() => {
+                                    setEnglishWord(`${item.english}`)
+                                    setMandarinWord(`${item.mandarin}`)
+                                    setPinyinWord(`${item.pinyin}`)
+                                }} />
+                            </form>
+                            
                         </td>
                     </tr>
                 )

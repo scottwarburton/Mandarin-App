@@ -5,8 +5,11 @@ class Saved extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            wordList: []
+            englishWords: [],
+            mandarinWords: [],
+            pinyinWords: []
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
         this.refreshList();
@@ -14,32 +17,62 @@ class Saved extends React.Component {
     async refreshList() {
         let response = await axios
             .get("/api-auth/words/")
-            //.then((res) => this.setState({ wordList: res.data[0].content }))
             .then((res) => res.data)
             .catch((err) => console.log(err));
+        let englishWords = [];
+        let mandarinWords = [];
+        let pinyinWords = [];
         for (let i = 0; i < response.length; i++) {
-            this.setState((prev) => ({ wordList: [...prev.wordList, response[i].content] })
-        )}
+            englishWords.push(response[i].englishWord);
+            mandarinWords.push(response[i].mandarinWord);
+            pinyinWords.push(response[i].pinyinWord);
+        }
+        this.setState({ 
+            englishWords: englishWords,
+            mandarinWords: mandarinWords,
+            pinyinWords: pinyinWords
+        })
     };
-    /*
-    renderItems() {
-      
-        return (this.state.wordList.map((item) => (
-            <li key={item}>
-                <span>{item.content}</span>
-                <button>Delete</button>
-            </li>
-        )))
+    async handleSubmit(e) {
+        e.preventDefault();
+        let response = await axios
+        .post("", {wordToDelete: e.target.wordToDelete.value})
+        .then(function (response) {
+            console.log(response);
+        })
+        this.refreshList();
     }
-    */
+
     render() {
+        let rows = [];
+        for (let i = 0; i < this.state.englishWords.length; i++) {
+            rows.push(
+                <tr key={i}>
+                    <td>{this.state.englishWords[i]}</td>
+                    <td>{this.state.mandarinWords[i]}</td>
+                    <td>{this.state.pinyinWords[i]}</td>
+                    <td>
+                        <form onSubmit={this.handleSubmit} >
+                            <button name="wordToDelete" value={this.state.englishWords[i]}>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            )
+        }
         return (
             <div>
-                <h3>saved</h3>
+                <h3>Saved Words</h3>
                 <div>
-                   {this.state.wordList}
+                    <table>
+                        <tr>
+                            <th>English</th>
+                            <th>Mandarin</th>
+                            <th>Pinyin</th>
+                            <th>Delete</th>
+                        </tr>
+                        {rows}
+                    </table>
                 </div>
-                <h3>end saved</h3>
             </div>
         )
     }
