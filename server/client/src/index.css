@@ -1,3 +1,5 @@
+/* Whole app */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,27 +8,63 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#app {
+  background-color: #7c98d2;
+  height: 100vh;
 }
-
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 50px;
+}
+.navBar {
+  background:linear-gradient(to bottom, #CCC 5%, #AAA 100%);
+	background-color:#CCC;
+	border-radius:10px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color: black;
+	font-size:16px;
+	padding:10px 30px;
+	text-decoration:none;
+}
+#body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+#lessonBox {
+  display: flex;
+  justify-content: center;
+}
 .tabContent {
   height: 500px;
   width: 800px;
-  background-color: hsl(252, 100%, 16%);
-  color: white;
+  background-color: #CCC;
+  border: 5px solid hsl(252, 100%, 16%);
+  border-radius: 10px;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.tablist {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: hsl(252, 100%, 16%);
+  border-radius: 10px;
+  color:white;
+}
+
+/* Topic/lesson buttons */
+
 .selection {
-	box-shadow: 0px 0px 0px 1px hsl(252, 100%, 16%);
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
 	border-radius:10px;
-	border:1px solid hsl(252, 100%, 16%);
 	display:inline-block;
 	cursor:pointer;
 	color:white;
@@ -34,23 +72,81 @@ code {
 	padding:10px 30px;
 	text-decoration:none;
 }
-.selection:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	background-color:#476e9e;
-}
 .selection:active {
 	position:relative;
 	top:2px;
 }
+.topicEveryday {
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+  border:1px solid hsl(252, 100%, 16%);
+}
+.topicEveryday:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.topicTravel {
+	background:linear-gradient(to bottom, #3a850e 5%, #204b08 100%);
+	background-color: #3a850e;
+  border:1px solid #112904;
+}
+.topicTravel:hover {
+	background:linear-gradient(to bottom, #204b08 5%, #3a850e 100%);
+	background-color:#204b08;
+}
+.topicIndustries {
+	background:linear-gradient(to bottom, #da4e49 5%, #69201e 100%);
+	background-color:#da4e49;
+  border:1px solid #3a1210;
+}
+.topicIndustries:hover {
+	background:linear-gradient(to bottom, #69201e 5%, #da4e49 100%);
+	background-color:#69201e;
+}
 .selectionForm {
   width: 200px;
-  height: 200px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-[lang="zh"] .wordList1 {
-    font-family: 'Noto Sans', sans-serif;
+
+/* Saved Words */
+
+.saveWord {
+  width: 50px;
+  height: 20px;
+}
+
+/* Word List */
+
+
+
+/* Flashcards */
+
+.flashcards {
+  width: 100px;
+  height: 80px;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+  border: 2px solid #100052;
+  padding: 10px;
+  color:hsl(252, 100%, 16%);
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+}
+.flashcards:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.flashcardsFlip {
+  color:white;
 }
 .wordListBox {
   width: 800px;
@@ -58,36 +154,11 @@ code {
   display: grid;
   grid-row-gap: 0px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
 }
-#box {
-  display: flex;
-  justify-content: center;
-}
-#app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(124, 152, 210);
-  height: 100vh;
-}
-.tablist {
-  display: flex;
-  justify-content: space-evenly;
-}
-.flashcards {
-  width: 100px;
-  height: 80px;
-  background-color: #CCC;
-  padding: 10px;
-  border: 2px solid hsl(252, 100%, 16%);
-  color:hsl(252, 100%, 16%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  cursor: pointer;
-}
+
+/* Sentences */
+
 .sentences {
   font-size: 40px;
   width: 700px;
@@ -97,3 +168,63 @@ code {
   justify-content: space-evenly;
   align-items: center;
 }
+
+/* Tables (Saved/WordList) */
+
+table.blueTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #D0E4F5;
+  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+  border-top: 2px solid #444444;
+}
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #476e9e;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+table.blueTable {
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #100052;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+  color: black;
+}
+table.blueTable tr:nth-child(even) {
+  background: #BEC3D2;
+}
+table.blueTable thead {
+  background: #7C98D2;
+  background: -moz-linear-gradient(top, #9db2dd 0%, #89a2d6 66%, #7C98D2 100%);
+  background: -webkit-linear-gradient(top, #9db2dd 0%, #89a2d6 66%, #7C98D2 100%);
+  background: linear-gradient(to bottom, #9db2dd 0%, #89a2d6 66%, #7C98D2 100%);
+  border-bottom: 2px solid #100052;
+}
+table.blueTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+

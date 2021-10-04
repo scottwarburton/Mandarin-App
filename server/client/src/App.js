@@ -10,82 +10,88 @@ function App() {
 
   return (
     <div id="app">
-      <h1>Learning Mandarin</h1>
+      <div id="header">
+        <h1>Learning Mandarin</h1>
 
-      {topic === "" && lesson === "" && <h3>Welcome to Learning Mandarin by Scott</h3>} 
-
-      { !saved && <button className="selection" name="saved" onClick={() => {
-        setTopic("");
-        setLesson("");
-        setSaved(true);
-        }}>Saved Words
-        </button>
-      }
-      { saved && 
-        <div>
-          <button className="selection" name="home" onClick={() => {
-            setTopic("");
-            setLesson("");
-            setSaved(false);
-            }}>Home
-          </button>
-          <Saved />
-        </div>
-      }
-
-      { topic === "" && !saved &&
-        <div className="selectionForm">
-          <h3>Topics:</h3>
-          <button className="selection" name="topics" onClick={() => setTopic("Everyday")}>Everyday</button>
-          <button className="selection" name="topics" onClick={() => setTopic("Travel")}>Travel</button>
-          <button className="selection" name="topics" onClick={() => setTopic("Industries")}>Industries</button>
-        </div>
-      }
-      
-      { topic === "Everyday" && lesson === "" && !saved &&
-        <div className="selectionForm">
-          <h3>Lessons:</h3>
-          <button className="selection" name="lessons" onClick={() => setLesson("Greetings")}>Greetings</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Activities")}>Activities</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Shopping")}>Shopping</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Casual Talk")}>Casual talk</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Grammar")}>Grammar</button>
-        </div>
-      }
-
-      { topic === "Travel" && lesson === "" && !saved &&
-        <form className="selectionForm">
-          <button className="selection" name="lessons" onClick={() => setLesson("Transport")}>Transport</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Locations")}>Locations</button>
-        </form>
-      }
-      { topic === "Industries" && lesson === "" && !saved &&
-        <form className="selectionForm">
-          <button className="selection" name="lessons" onClick={() => setLesson("Economics")}>Economics</button>
-          <button className="selection" name="lessons" onClick={() => setLesson("Technology")}>Technology</button>
-        </form>
-      }
-
-      { topic !== "" && lesson !== "" &&
         <form>
-          <button className="selection" name="change" onClick={() => {
-            setTopic("");
-            setLesson("");
-          }}>Change Topic</button>
-          <button className="selection" name="change" onClick={() => setLesson("")}>Change Lesson</button>
+          { ( topic !== "" || saved === true ) &&
+              <button className="navBar" name="change" onClick={() => {
+                setTopic("");
+                setLesson("");
+                setSaved(false);
+              }}>Home</button>
+          }
+          { topic !== "" && lesson !== "" &&
+              <button className="navBar" name="change" onClick={() => {
+                setLesson("");
+                setSaved(false);
+              }}>Change Lesson</button>
+          }
+          { !saved && 
+            <button className="navBar" name="saved" onClick={() => {
+              setTopic("");
+              setLesson("");
+              setSaved(true);
+              }}>Saved Words
+            </button>
+          }
         </form>
-      }
+      </div>
+      <div id="body">
 
-      <div id="box">
-        {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} /> : null}
-        {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} /> : null}
-        {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} /> : null}
-        {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} /> : null}
-        {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} /> : null}
-        {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} /> : null}
-        {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} /> : null}
-        {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} /> : null}
-        {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} /> : null}
+        {topic === "" && lesson === "" && !saved && <h3>Welcome to Learning Mandarin by Scott</h3>} 
+
+        { saved && 
+          <div>
+            <Saved />
+          </div>
+        }
+        <br /><br />
+
+        { topic === "" && !saved &&
+          <div className="selectionForm">
+            <h3>Topics:</h3>
+          <button className="selection topicEveryday" id="topicEveryday" onClick={() => setTopic("Everyday")}>Everyday</button>
+            <button className="selection topicTravel" id="topicTravel" onClick={() => setTopic("Travel")}>Travel</button>
+            <button className="selection topicIndustries" id="topicIndustries" onClick={() => setTopic("Industries")}>Industries</button>
+          </div>
+        }
+        
+        { topic === "Everyday" && lesson === "" && !saved &&
+          <div className="selectionForm">
+            <h3>{topic} Lessons:</h3>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Greetings")}>Greetings</button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Activities")}>Activities</button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Shopping")}>Shopping</button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Casual Talk")}>Casual talk</button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Grammar")}>Grammar</button>
+          </div>
+        }
+
+        { topic === "Travel" && lesson === "" && !saved &&
+          <form className="selectionForm">
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport</button>
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Locations")}>Locations</button>
+          </form>
+        }
+        { topic === "Industries" && lesson === "" && !saved &&
+          <form className="selectionForm">
+            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Economics")}>Economics</button>
+            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Technology")}>Technology</button>
+          </form>
+        }
+
+        <div id="lessonBox">
+          {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} /> : null}
+          {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} /> : null}
+          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} /> : null}
+          {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} /> : null}
+          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} /> : null}
+          {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} /> : null}
+          {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} /> : null}
+          {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} /> : null}
+          {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} /> : null}
+        </div>
       </div>
     </div>
   );

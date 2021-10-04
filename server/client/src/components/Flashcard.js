@@ -5,7 +5,7 @@ const Flashcard = ({ flashcard }) => {
     return (
         <div 
             onClick={() => setFlip(!flip)}
-            className="flashcards"
+            className={`flashcards ${flip ? "flashcardsFlip" : ""}`}
         >
             {flip ? flashcard.english : flashcard.mandarin}
         </div>
