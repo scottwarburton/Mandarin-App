@@ -1,5 +1,10 @@
 import axios from 'axios'
 import React from 'react'
+import Table from "./Table";
+
+
+
+ 
 
 class Saved extends React.Component {
     constructor(props) {
@@ -44,6 +49,52 @@ class Saved extends React.Component {
     }
 
     render() {
+        const columns = [
+            {
+                Header: 'English',
+                accessor: 'english',
+            },
+            {
+                Header: 'Mandarin',
+                accessor: 'mandarin',
+            },
+            {
+                Header: 'Pinyin',
+                accessor: 'pinyin',
+            },
+            {
+                Header: 'Delete',
+                accessor: 'delete',
+            }
+        ]
+        const data = [];
+        for (let i = 0; i < this.state.englishWords.length; i++) {
+            data.push(
+                {
+                    english: this.state.englishWords[i],
+                    mandarin: this.state.mandarinWords[i],
+                    pinyin: this.state.pinyinWords[i],
+                    delete: <form onSubmit={this.handleSubmit}><button name="wordToDelete" value={this.state.englishWords[i]}>Delete</button></form>
+                },
+            );
+        }
+        
+        return (
+            <div>
+                <h3>Saved Words</h3>
+                <div>
+                    <Table columns={columns} data={data}/>
+                </div>
+            </div>
+        )
+    }
+
+}
+
+export default Saved
+
+/*
+render() {
         let rows = [];
         for (let i = 0; i < this.state.englishWords.length; i++) {
             rows.push(
@@ -61,6 +112,8 @@ class Saved extends React.Component {
         }
         return (
             <div>
+                 <Table columns={columns} data={data}/>
+
                 <h3>Saved Words</h3>
                 <div>
                     <table className="blueTable">
@@ -93,7 +146,4 @@ class Saved extends React.Component {
             </div>
         )
     }
-
-}
-
-export default Saved
+*/

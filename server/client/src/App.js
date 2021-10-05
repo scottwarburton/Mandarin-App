@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Lesson from "./components/Lesson"
 import Saved from "./components/Saved"
 
+
 function App() {
   const [topic, setTopic] = useState("");
   const [lesson, setLesson] = useState("");
@@ -46,7 +47,6 @@ function App() {
             <Saved />
           </div>
         }
-        <br /><br />
 
         { topic === "" && !saved &&
           <div className="selectionForm">

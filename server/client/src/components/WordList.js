@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from "axios"
 
+
+
 const WordList = ({ flashcards }) => {
     const [englishWord, setEnglishWord] = useState("");
     const [mandarinWord, setMandarinWord] = useState("");
@@ -31,19 +33,6 @@ const WordList = ({ flashcards }) => {
                     <th>Save</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <td colspan="4">
-                        <div className="links">
-                            <a href="#">&laquo;</a>
-                            <a className="active" href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">&raquo;</a>
-                        </div>
-                    </td>
-                </tr>
-            </tfoot>
             <tbody>
                 {flashcards.map(item => {
                     return (

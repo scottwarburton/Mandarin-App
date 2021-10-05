@@ -36,14 +36,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+  min-height: 600px;
 }
 #lessonBox {
   display: flex;
   justify-content: center;
 }
 .tabContent {
-  height: 500px;
+  height: 600px;
   width: 800px;
   background-color: #CCC;
   border: 5px solid hsl(252, 100%, 16%);
@@ -171,32 +171,9 @@ body {
 
 /* Tables (Saved/WordList) */
 
-table.blueTable tfoot {
-  font-size: 14px;
-  font-weight: bold;
-  color: #FFFFFF;
-  background: #D0E4F5;
-  background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
-  border-top: 2px solid #444444;
-}
-table.blueTable tfoot td {
-  font-size: 14px;
-}
-table.blueTable tfoot .links {
-  text-align: right;
-}
-table.blueTable tfoot .links a{
-  display: inline-block;
-  background: #476e9e;
-  color: #FFFFFF;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
 table.blueTable {
   background-color: #EEEEEE;
-  width: 100%;
+  width: 600px;
   text-align: center;
   border-collapse: collapse;
 }
@@ -205,7 +182,7 @@ table.blueTable td, table.blueTable th {
   padding: 3px 2px;
 }
 table.blueTable tbody td {
-  font-size: 13px;
+  font-size: 18px;
   color: black;
 }
 table.blueTable tr:nth-child(even) {
@@ -219,12 +196,10 @@ table.blueTable thead {
   border-bottom: 2px solid #100052;
 }
 table.blueTable thead th {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   color: #FFFFFF;
   text-align: center;
 }
-table.blueTable tfoot td {
-  font-size: 14px;
-}
 
+/*  */
