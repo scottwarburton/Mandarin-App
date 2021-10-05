@@ -601,7 +601,7 @@ const GRAMMAR = [
   },
   {
     id: 7,
-    english: "pronunciation",
+    english: "pronun- ciation",
     mandarin: "发音 / 读音",
     pinyin: "fāyīn / 读音"
   },
@@ -899,7 +899,7 @@ const LOCATIONS = [
   },
   {
     id: 18,
-    english: "state/province",
+    english: "state/ province",
     mandarin: "州",
     pinyin: "zhōu"
   }
@@ -1113,7 +1113,7 @@ const TECHNOLOGY = [
   },
   {
     id: 15,
-    english: "monitor/screen",
+    english: "monitor/ screen",
     mandarin: "显示器",
     pinyin: "xiǎnshìqì"
   },

@@ -3,7 +3,6 @@ import React from 'react'
 
 function Table({ columns, data }) {
     const {
-      getTableProps,
       getTableBodyProps,
       headerGroups,
       prepareRow,
@@ -29,41 +28,33 @@ function Table({ columns, data }) {
       <>
         <table className="blueTable">
             <thead>
-            {headerGroups.map(headerGroup => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map(column => (
-                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-                ))}
-                </tr>
-            ))}
+              {headerGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map(column => (
+                      <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                  ))}
+                  </tr>
+              ))}
             </thead>
             <tbody {...getTableBodyProps()}>
-            {page.map((row, i) => {
-                prepareRow(row)
-                return (
-                <tr {...row.getRowProps()}>
-                    {row.cells.map(cell => {
-                    return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                    })}
-                </tr>
-                )
-            })}
+              {page.map((row, i) => {
+                  prepareRow(row)
+                  return (
+                  <tr {...row.getRowProps()}>
+                      {row.cells.map(cell => {
+                      return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      })}
+                  </tr>
+                  )
+              })}
             </tbody>
         </table>
 
         <div className="pagination">
-          <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-            {'<<'}
-          </button>{' '}
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            {'<'}
-          </button>{' '}
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
-            {'>'}
-          </button>{' '}
-          <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-            {'>>'}
-          </button>{' '}
+          <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>{' '}
+          <button onClick={() => previousPage()} disabled={!canPreviousPage}>{'<'}</button>{' '}
+          <button onClick={() => nextPage()} disabled={!canNextPage}>{'>'}</button>{' '}
+          <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>{' '}
           <span>Page{' '}{pageIndex + 1} of {pageOptions.length}{' '}</span>
           <select
             value={pageSize}
