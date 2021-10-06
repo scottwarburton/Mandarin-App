@@ -110,6 +110,29 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.topicSelection {
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.topicBoxes {
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+#topicBoxEveryday {
+  justify-content: flex-end;
+}
+#topicBoxTravel {
+  justify-content: center;
+}
+#topicBoxIndustries {
+  justify-content: flex-end;
+}
 
 /* Saved Words */
 
@@ -118,8 +141,23 @@ body {
   height: 20px;
 }
 
-/* Word List */
+/* Lesson intro */
 
+#lessonHeading {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  font-style: italic;
+}
+#lessonPicDiv {
+  box-shadow: inset 0px 0px 30px 30px #CCC;
+}
+#lessonPic {
+  width: 600px;
+  height: 400px;
+}
+
+/* Word List */
 
 
 /* Flashcards */

@@ -11,7 +11,12 @@ function Lesson(props) {
             <Tabs>
                 <div className="tabContent">
                     <TabPanel>
-                        <h3>Welcome to {props.lesson}</h3>
+                        <div id="lessonHeading">
+                            <h3>Welcome to {props.lesson}</h3>
+                        </div>
+                        <div id="lessonPicDiv">
+                            <img id="lessonPic" src={props.picture}/>
+                        </div>
                     </TabPanel>
                     <TabPanel>
                         <WordList flashcards={props.flashcards} />

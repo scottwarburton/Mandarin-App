@@ -3,6 +3,20 @@ import React, { useState } from "react"
 import Lesson from "./components/Lesson"
 import Saved from "./components/Saved"
 
+import { IoEarth, IoWalletSharp, IoPartlySunnyOutline } from "react-icons/io5";
+import { MdEmojiPeople } from "react-icons/md";
+import { GiLaptop, GiCargoCrane, GiTalk } from "react-icons/gi";
+import { GrTrain, GrMapLocation } from "react-icons/gr";
+import { AiFillHome } from "react-icons/ai";
+import { IoIosSave } from "react-icons/io";
+import { FaExchangeAlt, FaShoppingCart } from "react-icons/fa";
+import { BiRun } from "react-icons/bi";
+import { BsSpellcheck } from "react-icons/bs";
+
+import everyday from "./components/everyday.jpg"
+import shanghai from "./components/shanghai.jpg"
+import industries from "./components/industries.jpg"
+
 
 function App() {
   const [topic, setTopic] = useState("");
@@ -16,24 +30,24 @@ function App() {
 
         <form>
           { ( topic !== "" || saved === true ) &&
-              <button className="navBar" name="change" onClick={() => {
+              <button className="navBar" onClick={() => {
                 setTopic("");
                 setLesson("");
                 setSaved(false);
-              }}>Home</button>
+              }}>Home <AiFillHome/></button>
           }
           { topic !== "" && lesson !== "" &&
-              <button className="navBar" name="change" onClick={() => {
+              <button className="navBar" onClick={() => {
                 setLesson("");
                 setSaved(false);
-              }}>Change Lesson</button>
+              }}>Change Lesson <FaExchangeAlt/></button>
           }
           { !saved && 
             <button className="navBar" name="saved" onClick={() => {
               setTopic("");
               setLesson("");
               setSaved(true);
-              }}>Saved Words
+              }}>Saved Words <IoIosSave/>
             </button>
           }
         </form>
@@ -49,48 +63,61 @@ function App() {
         }
 
         { topic === "" && !saved &&
-          <div className="selectionForm">
-            <h3>Topics:</h3>
-          <button className="selection topicEveryday" id="topicEveryday" onClick={() => setTopic("Everyday")}>Everyday</button>
-            <button className="selection topicTravel" id="topicTravel" onClick={() => setTopic("Travel")}>Travel</button>
-            <button className="selection topicIndustries" id="topicIndustries" onClick={() => setTopic("Industries")}>Industries</button>
+          <div>
+            <div  className="topicSelection">
+              <div id="topicBoxEveryday" className="topicBoxes">
+                <img id="everyday" src={everyday} alt="everyday" width="250px"></img>
+                <br/>
+                <button className="selection topicEveryday" id="topicEveryday" onClick={() => setTopic("Everyday")}>Everyday <IoPartlySunnyOutline/></button>
+              </div>
+              <div id="topicBoxTravel" className="topicBoxes">
+                <img id="shanghai" src={shanghai} alt="shanghai" width="250px"></img>
+                <br/>
+                <button className="selection topicTravel" id="topicTravel" onClick={() => setTopic("Travel")}>Travel <IoEarth/></button>
+              </div>
+              <div id="topicBoxIndustries" className="topicBoxes">
+                <img id="industries" src={industries} alt="industries" width="250px"></img>
+                <br/>
+                <button className="selection topicIndustries" id="topicIndustries" onClick={() => setTopic("Industries")}>Industries <GiCargoCrane/></button>
+              </div>
+            </div>
           </div>
         }
         
         { topic === "Everyday" && lesson === "" && !saved &&
           <div className="selectionForm">
             <h3>{topic} Lessons:</h3>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Greetings")}>Greetings</button>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Activities")}>Activities</button>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Shopping")}>Shopping</button>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Casual Talk")}>Casual talk</button>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Grammar")}>Grammar</button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Greetings")}>Greetings <MdEmojiPeople/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Activities")}>Activities <BiRun/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Shopping")}>Shopping <FaShoppingCart/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Casual Talk")}>Casual talk <GiTalk/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Grammar")}>Grammar <BsSpellcheck/></button>
           </div>
         }
 
         { topic === "Travel" && lesson === "" && !saved &&
           <form className="selectionForm">
-            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport</button>
-            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Locations")}>Locations</button>
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport <GrTrain/></button>
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Locations")}>Locations <GrMapLocation/></button>
           </form>
         }
         { topic === "Industries" && lesson === "" && !saved &&
           <form className="selectionForm">
-            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Economics")}>Economics</button>
-            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Technology")}>Technology</button>
+            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Economics")}>Economics <IoWalletSharp/></button>
+            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Technology")}>Technology <GiLaptop/></button>
           </form>
         }
 
         <div id="lessonBox">
-          {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} /> : null}
-          {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} /> : null}
-          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} /> : null}
-          {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} /> : null}
-          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} /> : null}
-          {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} /> : null}
-          {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} /> : null}
-          {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} /> : null}
-          {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} /> : null}
+          {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} picture={everyday}/> : null}
+          {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} picture={shanghai} /> : null}
+          {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} picture={shanghai} /> : null}
+          {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} picture={industries} /> : null}
+          {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} picture={industries} /> : null}
         </div>
       </div>
     </div>
