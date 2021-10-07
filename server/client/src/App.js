@@ -3,17 +3,20 @@ import React, { useState } from "react"
 import Lesson from "./components/Lesson"
 import Saved from "./components/Saved"
 
-import { IoEarth, IoWalletSharp, IoPartlySunnyOutline } from "react-icons/io5";
-import { MdEmojiPeople } from "react-icons/md";
+import { IoEarth, IoWalletSharp, IoPartlySunnyOutline, IoSchoolSharp } from "react-icons/io5";
+import { MdEmojiPeople, MdOutlineWork } from "react-icons/md";
 import { GiLaptop, GiCargoCrane, GiTalk } from "react-icons/gi";
 import { GrTrain, GrMapLocation } from "react-icons/gr";
 import { AiFillHome } from "react-icons/ai";
 import { IoIosSave } from "react-icons/io";
-import { FaExchangeAlt, FaShoppingCart } from "react-icons/fa";
+import { FaExchangeAlt, FaShoppingCart, FaUserTie } from "react-icons/fa";
 import { BiRun } from "react-icons/bi";
 import { BsSpellcheck } from "react-icons/bs";
+import { ImOffice } from "react-icons/im";
+
 
 import everyday from "./components/everyday.jpg"
+import study from "./components/study.jpg"
 import shanghai from "./components/shanghai.jpg"
 import industries from "./components/industries.jpg"
 
@@ -66,17 +69,22 @@ function App() {
           <div>
             <div  className="topicSelection">
               <div id="topicBoxEveryday" className="topicBoxes">
-                <img id="everyday" src={everyday} alt="everyday" width="250px"></img>
+                <img id="everyday" className="topicImg" src={everyday} alt="everyday" width="250px"></img>
                 <br/>
                 <button className="selection topicEveryday" id="topicEveryday" onClick={() => setTopic("Everyday")}>Everyday <IoPartlySunnyOutline/></button>
               </div>
+              <div id="topicBoxStudy" className="topicBoxes">
+                <img id="study" className="topicImg" src={study} alt="study" width="250px"></img>
+                <br/>
+                <button className="selection topicStudy" id="topicStudy" onClick={() => setTopic("Study")}>Work & Study <ImOffice/></button>
+              </div>
               <div id="topicBoxTravel" className="topicBoxes">
-                <img id="shanghai" src={shanghai} alt="shanghai" width="250px"></img>
+                <img id="shanghai" className="topicImg" src={shanghai} alt="shanghai" width="250px"></img>
                 <br/>
                 <button className="selection topicTravel" id="topicTravel" onClick={() => setTopic("Travel")}>Travel <IoEarth/></button>
               </div>
               <div id="topicBoxIndustries" className="topicBoxes">
-                <img id="industries" src={industries} alt="industries" width="250px"></img>
+                <img id="industries" className="topicImg" src={industries} alt="industries" width="250px"></img>
                 <br/>
                 <button className="selection topicIndustries" id="topicIndustries" onClick={() => setTopic("Industries")}>Industries <GiCargoCrane/></button>
               </div>
@@ -94,7 +102,13 @@ function App() {
             <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Grammar")}>Grammar <BsSpellcheck/></button>
           </div>
         }
-
+        { topic === "Study" && lesson === "" && !saved &&
+          <form className="selectionForm">
+            <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Study")}>Study <IoSchoolSharp/></button>
+            <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Work")}>Work <MdOutlineWork/></button>
+            <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Interview")}>Interview <FaUserTie/></button>
+          </form>
+        }
         { topic === "Travel" && lesson === "" && !saved &&
           <form className="selectionForm">
             <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport <GrTrain/></button>
@@ -114,8 +128,14 @@ function App() {
           {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={everyday} /> : null}
           {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} picture={everyday} /> : null}
           {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} picture={everyday} /> : null}
+          
+          {lesson === "Study" ? <Lesson lesson={lesson} flashcards={STUDY} sentences={STUDY_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Work" ? <Lesson lesson={lesson} flashcards={WORK} sentences={WORK_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Interview" ? <Lesson lesson={lesson} flashcards={INTERVIEW} sentences={INTERVIEW_SENTENCES} picture={everyday} /> : null}
+          
           {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} picture={shanghai} /> : null}
           {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} picture={shanghai} /> : null}
+          
           {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} picture={industries} /> : null}
           {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} picture={industries} /> : null}
         </div>
@@ -127,6 +147,111 @@ function App() {
 
 export default App;
 
+const GREETINGS_SENTENCES = [
+  "你好，最近怎么样",
+  "很好谢谢，你呢",
+  "不好意思，你叫什么名字"
+]
+const ACTIVITIES_SENTENCES = [
+  "我喜欢去电影院，你想去吗",
+  "我不明白你，请再说一遍",
+  "听起来挺好的"
+]
+const SHOPPING_SENTENCES = [
+  "你们还想别的吗",
+  "我可以支付吗",
+  "这些多少钱"
+]
+const CASUALTALK_SENTENCES = [
+  "不管你喜不喜欢..",
+  "",
+  ""
+]
+const GRAMMAR_SENTENCES = [
+  "A",
+  "B",
+  "C"
+]
+const STUDY_SENTENCES = [
+  "A",
+  "别浪费时间",
+  "我代表学校，向同学们表示祝贺"
+]
+const WORK_SENTENCES = [
+  "举办会议",
+  "B",
+  "C"
+]
+const INTERVIEW_SENTENCES = [
+  "最大的挑战",
+  "其中我最喜欢的是",
+  "首先，其次，再次，最后",
+  "最大的优点是。。，最大的缺点是。。"
+]
+const TRANSPORT_SENTENCES = [
+  "我迟到了因为公车太慢了",
+  "为什么你乘坐公车",
+  "因为火车票太贵了，并且火车站太远"
+]
+const LOCATIONS_SENTENCES = [
+  "我来自澳洲",
+  "现在我住在墨尔本，但是我想住在上海",
+  "你来自哪个城市"
+]
+const ECONOMICS_SENTENCES = [
+  "A",
+  "B",
+  "C"
+]
+const TECHNOLOGY_SENTENCES = [
+  "A",
+  "B",
+  "C"
+]
+
+/*
+Phrases
+甚至连x也y  even though x also y
+可以说 can say
+其实 actually
+确实 really
+老实说 honestly
+热真的 seriously
+反正 anyway
+而且 and
+另外 in addition
+然而 however
+虽然 although
+并且 and
+因此 therefore
+只要a就b as long as
+限制 limit
+请整理你的行李 organise luggage
+随便看看 just looking
+没想到 didn't believe
+适合 suit
+在我看来 in my opinion
+实际上 actually
+走向 leading to
+任何 any
+过程 process
+支持 support
+由于 due to x, ..
+除了。。还 apart from
+超过 exceed
+政治的中心 political center
+生产 produce
+总之 in summary
+有空的时候 free time
+既然， 就 since
+改变主意的 change mind
+至少。。at least
+看法 opinion
+办法 method
+变化 change
+
+
+*/
 
 const GREETINGS = [
   {
@@ -238,11 +363,7 @@ const GREETINGS = [
       pinyin: "zěnme yàng"
   }
 ]
-const GREETINGS_SENTENCES = [
-  "你好，最近怎么样",
-  "很好谢谢，你呢",
-  "不好意思，你叫什么名字"
-]
+
 
 const ACTIVITIES = [
   {
@@ -354,11 +475,7 @@ const ACTIVITIES = [
     pinyin: "pǎobù"
   }
 ]
-const ACTIVITIES_SENTENCES = [
-  "我喜欢去电影院，你想去吗",
-  "我不明白你，请再说一遍",
-  "听起来挺好的"
-]
+
 const SHOPPING = [
   {
       id: 1,
@@ -469,11 +586,7 @@ const SHOPPING = [
     pinyin: "duōshǎo qián"
   }
 ]
-const SHOPPING_SENTENCES = [
-  "你们还想别的吗",
-  "我可以支付吗",
-  "这些多少钱"
-]
+
 const CASUALTALK = [
   {
       id: 1,
@@ -584,11 +697,7 @@ const CASUALTALK = [
     pinyin: ""
   }
 ]
-const CASUALTALK_SENTENCES = [
-  "不管你喜不喜欢..",
-  "",
-  ""
-]
+
 const GRAMMAR = [
   {
       id: 1,
@@ -699,10 +808,336 @@ const GRAMMAR = [
     pinyin: "duǎnhuà"
   }
 ]
-const GRAMMAR_SENTENCES = [
-  "",
-  "",
-  ""
+
+const STUDY = [
+  {
+      id: 1,
+      english: "study",
+      mandarin: "学习",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "exam",
+    mandarin: "考试",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "test",
+    mandarin: "测试",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "graduate (v)",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "graduate (n)",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "bachelors",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "masters",
+    mandarin: "硕士",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "PhD",
+    mandarin: "博士",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "assignment",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "project",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "professor",
+    mandarin: "教授",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "teacher",
+    mandarin: "老师",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "lesson",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "classroom",
+    mandarin: "课堂",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "lecture",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "major",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "habit",
+    mandarin: "习惯",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const WORK = [
+  {
+      id: 1,
+      english: "to work",
+      mandarin: "工作",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "go to work",
+    mandarin: "上班",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "leave work",
+    mandarin: "下班",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "work trip",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "suit",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "overtime",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "manager",
+    mandarin: "老板 / 经理",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "colleague",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "director",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "career",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "specialisation",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "meeting",
+    mandarin: "会议",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "promotion",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "support",
+    mandarin: "支持",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "company",
+    mandarin: "公司",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "office",
+    mandarin: "办公室",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const INTERVIEW = [
+  {
+      id: 1,
+      english: "interview",
+      mandarin: "面试",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "to apply",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "to accept",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "position",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "to sign up",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "challenge",
+    mandarin: "挑战",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "advantage",
+    mandarin: "有点",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "disadvantage",
+    mandarin: "缺点",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "benefits",
+    mandarin: "好处",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "improve",
+    mandarin: "提高",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "",
+    mandarin: "变化",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "",
+    mandarin: "",
+    pinyin: ""
+  }
 ]
 
 const TRANSPORT = [
@@ -815,11 +1250,7 @@ const TRANSPORT = [
     pinyin: "chídàole"
   }
 ]
-const TRANSPORT_SENTENCES = [
-  "我迟到了因为公车太慢了",
-  "为什么你乘坐公车",
-  "因为火车票太贵了，并且火车站太远"
-]
+
 
 const LOCATIONS = [
   {
@@ -931,11 +1362,7 @@ const LOCATIONS = [
     pinyin: "zhōu"
   }
 ]
-const LOCATIONS_SENTENCES = [
-  "我来自澳洲",
-  "现在我住在墨尔本，但是我想住在上海",
-  "你来自哪个城市"
-]
+
 
 const ECONOMICS = [
   {
@@ -1047,11 +1474,7 @@ const ECONOMICS = [
     pinyin: "qiánbāo"
   }
 ]
-const ECONOMICS_SENTENCES = [
-  "A",
-  "B",
-  "C"
-]
+
 
 const TECHNOLOGY = [
   {
@@ -1163,11 +1586,7 @@ const TECHNOLOGY = [
     pinyin: "shǔbiāo"
   }
 ]
-const TECHNOLOGY_SENTENCES = [
-  "A",
-  "B",
-  "C"
-]
+
 
 /*
 const ECONOMICS = [
@@ -1280,29 +1699,7 @@ const ECONOMICS = [
     pinyin: ""
   }
 ]
-const ECONOMICS_SENTENCES = [
-  "",
-  "",
-  ""
-]
 
-Phrases
-甚至连x也y  even though x also y
-还可以说
-举办会议
-最大的挑战
-
-Conjunctions
-其实
-确实
-老实说
-热真的
-反正
-而且
-另外
-然而
-虽然
-并且
 
 
 */
