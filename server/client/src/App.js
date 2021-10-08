@@ -155,83 +155,96 @@ const GREETINGS_SENTENCES = [
 const ACTIVITIES_SENTENCES = [
   "我喜欢去电影院，你想去吗",
   "我不明白你，请再说一遍",
-  "听起来挺好的"
+  "听起来挺好的",
 ]
 const SHOPPING_SENTENCES = [
   "你们还想别的吗",
   "我可以支付吗",
-  "这些多少钱"
+  "这些多少钱",
+  "随便看看",
+  "两张票，谢谢",
+  "服务员：几位？"
 ]
 const CASUALTALK_SENTENCES = [
   "不管你喜不喜欢..",
-  "",
-  ""
+  "但愿吧",
+  "我赶时间",
+  "有空的时候",
+  "可以说慢一点吗"
 ]
 const GRAMMAR_SENTENCES = [
-  "A",
-  "B",
-  "C"
+  "还可以说",
+  "我们应该一起说",
+  "你的声音很不错"
 ]
 const STUDY_SENTENCES = [
-  "A",
+  "准备好了吗",
   "别浪费时间",
-  "我代表学校，向同学们表示祝贺"
+  "我代表学校，向同学们表示祝贺",
+  "复习一下"
 ]
 const WORK_SENTENCES = [
   "举办会议",
-  "B",
-  "C"
+  "有事可以找我",
+  "请问一下",
+  "还有问题",
+  "这个公司生产什么"
 ]
 const INTERVIEW_SENTENCES = [
   "最大的挑战",
   "其中我最喜欢的是",
-  "首先，其次，再次，最后",
-  "最大的优点是。。，最大的缺点是。。"
+  "首先，其次，再次，最后, 总之",
+  "最大的优点是。。，最大的缺点是。。",
+  "祝你好运, 加油"
 ]
 const TRANSPORT_SENTENCES = [
   "我迟到了因为公车太慢了",
   "为什么你乘坐公车",
-  "因为火车票太贵了，并且火车站太远"
+  "因为火车票太贵了，并且火车站太远",
+  "火车站怎么走"
 ]
 const LOCATIONS_SENTENCES = [
   "我来自澳洲",
   "现在我住在墨尔本，但是我想住在上海",
-  "你来自哪个城市"
+  "你来自哪个城市",
+  "请整理你的行李",
+  "北京是中国的政治的中心",
+  "一路平安"
 ]
 const ECONOMICS_SENTENCES = [
-  "A",
-  "B",
-  "C"
+  "筹划阶段，然后建筑阶段",
+  "科学技术发展很快",
+  "我们的公司需要吸引更多投资"
 ]
 const TECHNOLOGY_SENTENCES = [
-  "A",
-  "B",
-  "C"
+  "我喜欢学习编程",
+  "我的桌子上在一个电脑，显示器，键盘，和鼠标",
+  "我的手机没有电了，需要一个充电器"
 ]
 
 /*
 Phrases
-甚至连x也y  even though x also y
-可以说 can say
+
 其实 actually
+实际上 actually
 确实 really
 老实说 honestly
 热真的 seriously
 反正 anyway
 而且 and
+并且 and
 另外 in addition
 然而 however
 虽然 although
-并且 and
 因此 therefore
+
+甚至连x也y  even though x also y
+可以说 can say
 只要a就b as long as
 限制 limit
-请整理你的行李 organise luggage
-随便看看 just looking
 没想到 didn't believe
 适合 suit
 在我看来 in my opinion
-实际上 actually
 走向 leading to
 任何 any
 过程 process
@@ -239,17 +252,13 @@ Phrases
 由于 due to x, ..
 除了。。还 apart from
 超过 exceed
-政治的中心 political center
-生产 produce
-总之 in summary
-有空的时候 free time
 既然， 就 since
 改变主意的 change mind
 至少。。at least
 看法 opinion
 办法 method
 变化 change
-
+为x担心/高兴/骄傲
 
 */
 
@@ -621,8 +630,8 @@ const CASUALTALK = [
   {
     id: 6,
     english: "what a pain",
-    mandarin: "麻烦",
-    pinyin: "máfan"
+    mandarin: "真麻烦",
+    pinyin: "zhēn máfan"
   },
   {
     id: 7,
@@ -680,21 +689,21 @@ const CASUALTALK = [
   },
   {
     id: 16,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "what do you mean?",
+    mandarin: "你的意思是什么",
+    pinyin: "nǐ de yìsi shì shénme"
   },
   {
     id: 17,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "long time no see",
+    mandarin: "好久不见",
+    pinyin: "hǎojiǔ bùjiàn"
   },
   {
     id: 18,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "talk later",
+    mandarin: "改天再说吧",
+    pinyin: "gǎitiān zàishuō ba"
   }
 ]
 
@@ -814,109 +823,109 @@ const STUDY = [
       id: 1,
       english: "study",
       mandarin: "学习",
-      pinyin: ""
+      pinyin: "xuéxí"
   },
   {
     id: 2,
     english: "exam",
     mandarin: "考试",
-    pinyin: ""
+    pinyin: "kǎoshì"
   },
   {
     id: 3,
     english: "test",
     mandarin: "测试",
-    pinyin: ""
+    pinyin: "cèshì"
   },
   {
     id: 4,
     english: "graduate (v)",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "毕业",
+    pinyin: "bìyè"
   },
   {
     id: 5,
-    english: "graduate (n)",
-    mandarin: "",
-    pinyin: ""
+    english: "to research",
+    mandarin: "研究",
+    pinyin: "yánjiū"
   },
   {
     id: 6,
-    english: "bachelors",
-    mandarin: "",
-    pinyin: ""
+    english: "bachelor's",
+    mandarin: "学士",
+    pinyin: "xuéshì"
   },
   {
     id: 7,
-    english: "masters",
+    english: "master's",
     mandarin: "硕士",
-    pinyin: ""
+    pinyin: "shuòshì"
   },
   {
     id: 8,
     english: "PhD",
     mandarin: "博士",
-    pinyin: ""
+    pinyin: "bóshì"
   },
   {
     id: 9,
     english: "assignment",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "任务",
+    pinyin: "rènwù"
   },
   {
     id: 10,
     english: "project",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "项目",
+    pinyin: "xiàngmù"
   },
   {
     id: 11,
     english: "professor",
     mandarin: "教授",
-    pinyin: ""
+    pinyin: "jiàoshòu"
   },
   {
     id: 12,
     english: "teacher",
     mandarin: "老师",
-    pinyin: ""
+    pinyin: "lǎoshī"
   },
   {
     id: 13,
     english: "lesson",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "课",
+    pinyin: "kè"
   },
   {
     id: 14,
     english: "classroom",
     mandarin: "课堂",
-    pinyin: ""
+    pinyin: "kètáng"
   },
   {
     id: 15,
     english: "lecture",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "讲座",
+    pinyin: "jiǎngzuò"
   },
   {
     id: 16,
     english: "major",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "专业",
+    pinyin: "zhuānyè"
   },
   {
     id: 17,
     english: "habit",
     mandarin: "习惯",
-    pinyin: ""
+    pinyin: "xíguàn"
   },
   {
     id: 18,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "motivated",
+    mandarin: "有动力",
+    pinyin: "dònglì"
   }
 ]
 const WORK = [
@@ -924,109 +933,109 @@ const WORK = [
       id: 1,
       english: "to work",
       mandarin: "工作",
-      pinyin: ""
+      pinyin: "gōngzuò"
   },
   {
     id: 2,
     english: "go to work",
     mandarin: "上班",
-    pinyin: ""
+    pinyin: "shàngbān"
   },
   {
     id: 3,
     english: "leave work",
     mandarin: "下班",
-    pinyin: ""
+    pinyin: "xiàbān"
   },
   {
     id: 4,
     english: "work trip",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "出差",
+    pinyin: "chūchāi"
   },
   {
     id: 5,
     english: "suit",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "西装",
+    pinyin: "xīzhuāng"
   },
   {
     id: 6,
     english: "overtime",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "加时",
+    pinyin: "jiā shí"
   },
   {
     id: 7,
     english: "manager",
     mandarin: "老板 / 经理",
-    pinyin: ""
+    pinyin: "lǎobǎn / jīnglǐ"
   },
   {
     id: 8,
     english: "colleague",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "同事",
+    pinyin: "tóngshì"
   },
   {
     id: 9,
     english: "director",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "董事",
+    pinyin: "dǒngshì"
   },
   {
     id: 10,
     english: "career",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "职业",
+    pinyin: "zhíyè"
   },
   {
     id: 11,
     english: "specialisation",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "专业化",
+    pinyin: "zhuānyè huà"
   },
   {
     id: 12,
     english: "meeting",
     mandarin: "会议",
-    pinyin: ""
+    pinyin: "huìyì"
   },
   {
     id: 13,
     english: "promotion",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "促销",
+    pinyin: "cùxiāo"
   },
   {
     id: 14,
     english: "support",
     mandarin: "支持",
-    pinyin: ""
+    pinyin: "zhīchí"
   },
   {
     id: 15,
     english: "company",
     mandarin: "公司",
-    pinyin: ""
+    pinyin: "gōngsī"
   },
   {
     id: 16,
     english: "office",
     mandarin: "办公室",
-    pinyin: ""
+    pinyin: "bàngōngshì"
   },
   {
     id: 17,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "client/customer",
+    mandarin: "客户/客人",
+    pinyin: "kèhù / kèrén"
   },
   {
     id: 18,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "to cooperate",
+    mandarin: "合作",
+    pinyin: "hézuò"
   }
 ]
 const INTERVIEW = [
@@ -1034,109 +1043,109 @@ const INTERVIEW = [
       id: 1,
       english: "interview",
       mandarin: "面试",
-      pinyin: ""
+      pinyin: "miànshì"
   },
   {
     id: 2,
     english: "to apply",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "申请",
+    pinyin: "shēnqǐng"
   },
   {
     id: 3,
     english: "to accept",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "接受",
+    pinyin: "jiēshòu"
   },
   {
     id: 4,
     english: "position",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "职位",
+    pinyin: "zhíwèi"
   },
   {
     id: 5,
     english: "to sign up",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "报名",
+    pinyin: "bàomíng"
   },
   {
     id: 6,
     english: "challenge",
     mandarin: "挑战",
-    pinyin: ""
+    pinyin: "tiǎozhàn"
   },
   {
     id: 7,
     english: "advantage",
     mandarin: "有点",
-    pinyin: ""
+    pinyin: "yǒudiǎn"
   },
   {
     id: 8,
     english: "disadvantage",
     mandarin: "缺点",
-    pinyin: ""
+    pinyin: "quēdiǎn"
   },
   {
     id: 9,
     english: "benefits",
     mandarin: "好处",
-    pinyin: ""
+    pinyin: "hǎochù"
   },
   {
     id: 10,
     english: "improve",
     mandarin: "提高",
-    pinyin: ""
+    pinyin: "tígāo"
   },
   {
     id: 11,
-    english: "",
+    english: "variety",
     mandarin: "变化",
-    pinyin: ""
+    pinyin: "biànhuà"
   },
   {
     id: 12,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "resume",
+    mandarin: "简历",
+    pinyin: "jiǎnlì"
   },
   {
     id: 13,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "strengths",
+    mandarin: "优势",
+    pinyin: "yōushì"
   },
   {
     id: 14,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "weaknesses",
+    mandarin: "弱势",
+    pinyin: "ruòshì"
   },
   {
     id: 15,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "visa",
+    mandarin: "签证",
+    pinyin: "qiānzhèng"
   },
   {
     id: 16,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "qualifications",
+    mandarin: "资格",
+    pinyin: "zīgé"
   },
   {
     id: 17,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "description",
+    mandarin: "描述",
+    pinyin: "miáoshù"
   },
   {
     id: 18,
-    english: "",
-    mandarin: "",
-    pinyin: ""
+    english: "ideal",
+    mandarin: "理想",
+    pinyin: "lǐxiǎng"
   }
 ]
 

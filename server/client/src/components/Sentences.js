@@ -4,7 +4,7 @@ const Sentences = ({ sentences }) => {
     return (
         <ul className="sentences">
             {sentences.map(item => {
-                return <li key={item}>{item}</li>
+                return <li key={item} className="sentence">{item}</li>
             })}
         </ul>
     )
