@@ -136,9 +136,7 @@ body {
 #topicBoxEveryday {
   justify-content: flex-end;
 }
-#topicBoxStudy {
-  justify-content: ;
-}
+/* #topicBoxStudy {} */
 #topicBoxTravel {
   justify-content: center;
 }
@@ -260,6 +258,9 @@ table.blueTable thead th {
   font-weight: bold;
   color: #FFFFFF;
   text-align: center;
+}
+tr:hover td {
+  background-color: cyan;
 }
 
 /*  */

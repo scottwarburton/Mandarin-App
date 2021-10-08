@@ -746,7 +746,7 @@ const GRAMMAR = [
   },
   {
     id: 7,
-    english: "pronun- ciation",
+    english: "pronunciation",
     mandarin: "发音 / 读音",
     pinyin: "fāyīn / 读音"
   },
@@ -1078,8 +1078,8 @@ const INTERVIEW = [
   {
     id: 7,
     english: "advantage",
-    mandarin: "有点",
-    pinyin: "yǒudiǎn"
+    mandarin: "优点",
+    pinyin: "yōudiǎn"
   },
   {
     id: 8,
