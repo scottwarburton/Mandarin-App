@@ -163,7 +163,8 @@ const SHOPPING_SENTENCES = [
   "这些多少钱",
   "随便看看",
   "两张票，谢谢",
-  "服务员：几位？"
+  "服务员：几位？",
+  "请再检查一遍"
 ]
 const CASUALTALK_SENTENCES = [
   "不管你喜不喜欢..",
@@ -175,7 +176,10 @@ const CASUALTALK_SENTENCES = [
 const GRAMMAR_SENTENCES = [
   "还可以说",
   "我们应该一起说",
-  "你的声音很不错"
+  "你的声音很不错",
+  "鱼被猫吃了",
+  "我为你做了蛋糕",
+  "我对你有感觉"
 ]
 const STUDY_SENTENCES = [
   "准备好了吗",
@@ -183,7 +187,8 @@ const STUDY_SENTENCES = [
   "我代表学校，向同学们表示祝贺",
   "复习一下",
   "这个问题判断对错",
-  "抓关键信息"
+  "抓关键信息",
+  "请读三遍"
 ]
 const WORK_SENTENCES = [
   "举办会议",
@@ -191,7 +196,10 @@ const WORK_SENTENCES = [
   "请问一下",
   "还有问题",
   "这个公司生产什么",
-  "我工作在这个大楼里"
+  "我工作在这个大楼里",
+  "如果有变化，请提前告诉我",
+  "按照经历的要求做",
+  "必须快点"
 ]
 const INTERVIEW_SENTENCES = [
   "最大的挑战",
@@ -241,6 +249,7 @@ Phrases
 然而 however
 虽然 although
 因此 therefore
+顺便问一下 by the way
 
 甚至连x也y  even though x also y
 可以说 can say
