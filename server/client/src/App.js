@@ -164,7 +164,8 @@ const SHOPPING_SENTENCES = [
   "随便看看",
   "两张票，谢谢",
   "服务员：几位？",
-  "请再检查一遍"
+  "请再检查一遍",
+  "无论饿了还是渴了，都不舒服"
 ]
 const CASUALTALK_SENTENCES = [
   "不管你喜不喜欢..",
@@ -199,7 +200,8 @@ const WORK_SENTENCES = [
   "我工作在这个大楼里",
   "如果有变化，请提前告诉我",
   "按照经历的要求做",
-  "必须快点"
+  "必须快点",
+  "真的很值得考虑"
 ]
 const INTERVIEW_SENTENCES = [
   "最大的挑战",
@@ -221,7 +223,8 @@ const LOCATIONS_SENTENCES = [
   "请整理你的行李",
   "北京是中国的政治的中心",
   "一路平安",
-  "世界上"
+  "世界上，各国是不同，和各位是不同",
+  "天气方面，总是感觉很热"
 ]
 const ECONOMICS_SENTENCES = [
   "筹划阶段，然后建筑阶段",

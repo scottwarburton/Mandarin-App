@@ -217,14 +217,17 @@ body {
 .sentences {
   font-size: 40px;
   width: 700px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  height: 100px;
+  text-align: center;
 }
-.sentence {
-  color:hsl(252, 100%, 16%);
+.sentenceButton {
+  width: 120px;
+  text-align: center;
+}
+.sentenceButtons {
+  width: 700px;
+  display: flex;
+  justify-content: space-evenly
 }
 
 /* Tables (Saved/WordList) */
