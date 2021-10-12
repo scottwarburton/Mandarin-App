@@ -123,7 +123,7 @@ function App() {
         }
 
         <div id="lessonBox">
-          {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} picture={everyday}/> : null}
+          {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} picture={everyday} questions={GREETINGS_QUESTIONS}/> : null}
           {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} picture={everyday} /> : null}
           {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={everyday} /> : null}
           {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} picture={everyday} /> : null}
@@ -172,7 +172,8 @@ const CASUALTALK_SENTENCES = [
   "但愿吧",
   "我赶时间",
   "有空的时候",
-  "可以说慢一点吗"
+  "可以说慢一点吗",
+  "我到底应该做什么"
 ]
 const GRAMMAR_SENTENCES = [
   "还可以说",
@@ -208,13 +209,18 @@ const INTERVIEW_SENTENCES = [
   "其中我最喜欢的是",
   "首先，其次，再次，最后, 总之",
   "最大的优点是。。，最大的缺点是。。",
-  "祝你好运, 加油"
+  "祝你好运, 加油",
+  "我忘记了原来的问题",
+  "直接交流"
 ]
 const TRANSPORT_SENTENCES = [
   "我迟到了因为公车太慢了",
   "为什么你乘坐公车",
   "因为火车票太贵了，并且火车站太远",
-  "火车站怎么走"
+  "火车站怎么走",
+  "任何消息",
+  "你怎么还没到",
+  "然后哪个方向"
 ]
 const LOCATIONS_SENTENCES = [
   "我来自澳洲",
@@ -229,13 +235,15 @@ const LOCATIONS_SENTENCES = [
 const ECONOMICS_SENTENCES = [
   "筹划阶段，然后建筑阶段",
   "科学技术发展很快",
-  "我们的公司需要吸引更多投资"
+  "我们的公司需要吸引更多投资",
+  "随着经济发展，这个公司越来越大"
 ]
 const TECHNOLOGY_SENTENCES = [
   "我喜欢学习编程",
   "我的桌子上在一个电脑，显示器，键盘，和鼠标",
   "我的手机没有电了，需要一个充电器"
 ]
+
 
 /*
 Phrases
@@ -277,6 +285,36 @@ Phrases
 为x担心/高兴/骄傲
 
 */
+
+const GREETINGS_QUESTIONS = [
+  {
+    id: 1,
+    question: "最近我很好。我感觉怎么样",
+    answer1: "很好",
+    answer2: "不好",
+    answer3: "很累",
+    answer4: "很兴奋",
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "Q",
+    answer1: "a",
+    answer2: "b",
+    answer3: "c",
+    answer4: "d",
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "Q",
+    answer1: "a",
+    answer2: "b",
+    answer3: "c",
+    answer4: "d",
+    correct: 3
+  }
+]
 
 const GREETINGS = [
   {

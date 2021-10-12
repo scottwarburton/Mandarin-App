@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import FlashCardList from "./FlashCardList";
 import Sentences from './Sentences';
 import WordList from "./WordList";
+import Quiz from "./Quiz";
 
 function Lesson(props) { 
     return (
@@ -28,7 +29,7 @@ function Lesson(props) {
                         <Sentences sentences={props.sentences} />
                     </TabPanel>
                     <TabPanel>
-                        <h2>Quiz time</h2>
+                        <Quiz questions={props.questions}/>
                     </TabPanel>
                 </div>
                 
