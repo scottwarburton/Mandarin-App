@@ -165,7 +165,8 @@ const SHOPPING_SENTENCES = [
   "两张票，谢谢",
   "服务员：几位？",
   "请再检查一遍",
-  "无论饿了还是渴了，都不舒服"
+  "无论饿了还是渴了，都不舒服",
+  "这是今年最流行的"
 ]
 const CASUALTALK_SENTENCES = [
   "不管你喜不喜欢..",
@@ -173,7 +174,8 @@ const CASUALTALK_SENTENCES = [
   "我赶时间",
   "有空的时候",
   "可以说慢一点吗",
-  "我到底应该做什么"
+  "我到底应该做什么",
+  "你来得正好"
 ]
 const GRAMMAR_SENTENCES = [
   "还可以说",
@@ -236,7 +238,8 @@ const ECONOMICS_SENTENCES = [
   "筹划阶段，然后建筑阶段",
   "科学技术发展很快",
   "我们的公司需要吸引更多投资",
-  "随着经济发展，这个公司越来越大"
+  "随着经济发展，这个公司越来越大",
+  "年底和月底很忙"
 ]
 const TECHNOLOGY_SENTENCES = [
   "我喜欢学习编程",
@@ -261,6 +264,9 @@ Phrases
 虽然 although
 因此 therefore
 顺便问一下 by the way
+经过 through ..
+顺便
+放心
 
 甚至连x也y  even though x also y
 可以说 can say
