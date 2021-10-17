@@ -296,30 +296,36 @@ const GREETINGS_QUESTIONS = [
   {
     id: 1,
     question: "最近我很好。我感觉怎么样",
-    answer1: "很好",
-    answer2: "不好",
-    answer3: "很累",
-    answer4: "很兴奋",
+    answers: [
+      "很好",
+      "不好",
+      "很累",
+      "很兴奋",
+    ],
     correct: 1
   },
   {
     id: 2,
-    question: "Q",
-    answer1: "a",
-    answer2: "b",
-    answer3: "c",
-    answer4: "d",
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
     correct: 2
   },
   {
     id: 3,
-    question: "Q",
-    answer1: "a",
-    answer2: "b",
-    answer3: "c",
-    answer4: "d",
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
     correct: 3
-  }
+  },
 ]
 
 const GREETINGS = [
