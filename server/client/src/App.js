@@ -124,20 +124,20 @@ function App() {
 
         <div id="lessonBox">
           {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} picture={everyday} questions={GREETINGS_QUESTIONS}/> : null}
-          {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} picture={everyday} /> : null}
-          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={everyday} /> : null}
-          {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} picture={everyday} /> : null}
-          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} picture={everyday} questions={ACTIVITIES_QUESTIONS} /> : null}
+          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={everyday} questions={SHOPPING_QUESTIONS} /> : null}
+          {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} picture={everyday} questions={CASUALTALK_QUESTIONS} /> : null}
+          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} picture={everyday} questions={GRAMMAR_QUESTIONS} /> : null}
           
-          {lesson === "Study" ? <Lesson lesson={lesson} flashcards={STUDY} sentences={STUDY_SENTENCES} picture={everyday} /> : null}
-          {lesson === "Work" ? <Lesson lesson={lesson} flashcards={WORK} sentences={WORK_SENTENCES} picture={everyday} /> : null}
-          {lesson === "Interview" ? <Lesson lesson={lesson} flashcards={INTERVIEW} sentences={INTERVIEW_SENTENCES} picture={everyday} /> : null}
+          {lesson === "Study" ? <Lesson lesson={lesson} flashcards={STUDY} sentences={STUDY_SENTENCES} picture={everyday} questions={STUDY_QUESTIONS} /> : null}
+          {lesson === "Work" ? <Lesson lesson={lesson} flashcards={WORK} sentences={WORK_SENTENCES} picture={everyday} questions={WORK_QUESTIONS} /> : null}
+          {lesson === "Interview" ? <Lesson lesson={lesson} flashcards={INTERVIEW} sentences={INTERVIEW_SENTENCES} picture={everyday} questions={INTERVIEW_QUESTIONS} /> : null}
           
-          {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} picture={shanghai} /> : null}
-          {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} picture={shanghai} /> : null}
+          {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} picture={shanghai} questions={TRANSPORT_QUESTIONS} /> : null}
+          {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} picture={shanghai} questions={LOCATIONS_QUESTIONS} /> : null}
           
-          {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} picture={industries} /> : null}
-          {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} picture={industries} /> : null}
+          {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} picture={industries} questions={ECONOMICS_QUESTIONS} /> : null}
+          {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} picture={industries} questions={TECHNOLOGY_QUESTIONS} /> : null}
         </div>
       </div>
     </div>
@@ -291,42 +291,6 @@ Phrases
 为x担心/高兴/骄傲
 
 */
-
-const GREETINGS_QUESTIONS = [
-  {
-    id: 1,
-    question: "最近我很好。我感觉怎么样",
-    answers: [
-      "很好",
-      "不好",
-      "很累",
-      "很兴奋",
-    ],
-    correct: 1
-  },
-  {
-    id: 2,
-    question: "question2",
-    answers: [
-      "answer1",
-      "answer2",
-      "answer3",
-      "answer4",
-    ],
-    correct: 2
-  },
-  {
-    id: 3,
-    question: "question3",
-    answers: [
-      "answer1",
-      "answer2",
-      "answer3",
-      "answer4",
-    ],
-    correct: 3
-  },
-]
 
 const GREETINGS = [
   {
@@ -1778,3 +1742,426 @@ const ECONOMICS = [
 
 
 */
+
+const GREETINGS_QUESTIONS = [
+  {
+    id: 1,
+    question: "最近我很好。我感觉怎么样",
+    answers: [
+      "很好",
+      "不好",
+      "很累",
+      "很兴奋",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+
+const ACTIVITIES_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+
+const SHOPPING_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const CASUALTALK_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const GRAMMAR_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const STUDY_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const WORK_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const INTERVIEW_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const TRANSPORT_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const LOCATIONS_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const ECONOMICS_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const TECHNOLOGY_QUESTIONS = [
+  {
+    id: 1,
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
