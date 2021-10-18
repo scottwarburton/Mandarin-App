@@ -3,7 +3,7 @@ import React from 'react'
 function Question(props) {
     return (
         <div>
-            <h3>{props.questions.question}</h3>
+            <h3 className="quizHeading">Q{props.questions.id}:   {props.questions.question}</h3>
         </div>
     )
 }

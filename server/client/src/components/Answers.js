@@ -7,7 +7,7 @@ function Answers(props) {
       answerList.push(<Answer selection={i} handleClick={props.handleClick} answer={props.questions.answers[i]} />)
     }
     return (
-        <div>
+        <div className="quizAnswers">
             {answerList}
         </div>
     )

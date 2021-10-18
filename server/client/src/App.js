@@ -1320,7 +1320,7 @@ const LOCATIONS = [
     id: 5,
     english: "Melbourne",
     mandarin: "墨尔本",
-    pinyin: "Mò'ěrběn"
+    pinyin: "Mòěrběn"
   },
   {
     id: 6,
