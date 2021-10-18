@@ -19,6 +19,7 @@ import everyday from "./components/everyday.jpg"
 import study from "./components/study.jpg"
 import shanghai from "./components/shanghai.jpg"
 import industries from "./components/industries.jpg"
+import flag from "./components/flag.png"
 
 
 function App() {
@@ -29,7 +30,19 @@ function App() {
   return (
     <div id="app">
       <div id="header">
-        <h1>Learning Mandarin</h1>
+        <div className="headingBoxes">
+          <div className="headingBox">
+            <img id="flag" src={flag} alt="flag" width="100px"></img>
+          </div>
+          <div className="headings headingBox">
+            <h1 className="headingEnglish">Mandarin Life</h1>
+            <h2 className="headingMandarin">普通话生活</h2>
+          </div>
+          <div className="headingBox">
+            <img id="flag" src={flag} alt="flag" width="100px"></img>
+          </div>
+        </div>
+        
 
         <form>
           { ( topic !== "" || saved === true ) &&
@@ -57,7 +70,12 @@ function App() {
       </div>
       <div id="body">
 
-        {topic === "" && lesson === "" && !saved && <h3>Welcome to Learning Mandarin by Scott</h3>} 
+        {topic === "" && lesson === "" && !saved && 
+          <div className="welcomeHeading">
+            <h3>Welcome to Mandarin Life by Scott</h3>
+            <h3 className="welcomeMandarin">欢迎来到普通话生活</h3>
+          </div>
+        } 
 
         { saved && 
           <div>
@@ -104,6 +122,7 @@ function App() {
         }
         { topic === "Study" && lesson === "" && !saved &&
           <form className="selectionForm">
+            <h3>{topic} Lessons:</h3>
             <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Study")}>Study <IoSchoolSharp/></button>
             <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Work")}>Work <MdOutlineWork/></button>
             <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Interview")}>Interview <FaUserTie/></button>
@@ -111,12 +130,14 @@ function App() {
         }
         { topic === "Travel" && lesson === "" && !saved &&
           <form className="selectionForm">
+            <h3>{topic} Lessons:</h3>
             <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport <GrTrain/></button>
             <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Locations")}>Locations <GrMapLocation/></button>
           </form>
         }
         { topic === "Industries" && lesson === "" && !saved &&
           <form className="selectionForm">
+            <h3>{topic} Lessons:</h3>
             <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Economics")}>Economics <IoWalletSharp/></button>
             <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Technology")}>Technology <GiLaptop/></button>
           </form>
