@@ -246,19 +246,46 @@ body {
 /* Sentences */
 
 .sentences {
-  font-size: 40px;
+  font-size: 30px;
+  font-weight: normal;
   width: 700px;
   height: 100px;
+  background-color:hsl(252, 100%, 16%);
+  color: white;
   text-align: center;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px 3px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .sentenceButton {
   width: 120px;
   text-align: center;
+  background-color: #AAA;
+  border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-size:16px;
+	padding:10px 30px;
+	text-decoration:none;
+}
+.sentenceButton:hover {
+  background-color: #666;
 }
 .sentenceButtons {
   width: 700px;
   display: flex;
   justify-content: space-evenly
+}
+.sentenceNumber {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Tables (Saved/WordList) */
@@ -320,6 +347,17 @@ tr:hover td {
 }
 .answerButton {
   min-width: 200px;
+  background-color: #AAA;
+  border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-size:16px;
+	padding:10px 30px;
+	text-decoration:none;
+}
+.answerButton:hover {
+  background-color: #666;
 }
 .fullScore {
   color: lime;

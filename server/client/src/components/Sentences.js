@@ -21,10 +21,11 @@ const Sentences = ({ sentences }) => {
             <div className="sentences">
                 {sentences[sentenceCount]}
             </div>
+            <br/><br/>
             <div className="sentenceButtons">
-                <button className="selection topicEveryday sentenceButton" onClick={downCount}>Previous</button>
-                <div>{sentenceCount + 1} / {sentences.length}</div>
-                <button className="selection topicEveryday sentenceButton" onClick={upCount}>Next</button>
+                <button className="sentenceButton" onClick={downCount}>Previous</button>
+                <div className="sentenceNumber">{sentenceCount + 1} / {sentences.length}</div>
+                <button className="sentenceButton" onClick={upCount}>Next</button>
             </div>
         </div>
     )

@@ -46,7 +46,7 @@ class Quiz extends React.Component {
                                 <h3 className="fullScore">&nbsp;&nbsp;&nbsp;100%!</h3>
                             }
                         </div>
-                        <button className="selection topicEveryday" onClick={this.retry}>Retry</button>
+                        <button className="answerButton" onClick={this.retry}>Retry</button>
                         
                     </div>
                 }
