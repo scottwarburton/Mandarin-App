@@ -33,16 +33,24 @@ class Quiz extends React.Component {
             <div>
                 {this.state.gameStatus && 
                     <div>
+                        <p className="quizParagraph">{this.state.questions[0].paragraph}</p>
                         <QuizBox handleClick={this.handleClick} questions={this.state.questions[this.state.currentQuestion]}/>
                         <h4 className="quizHeading">Score {this.state.correct} / {this.state.currentQuestion}</h4>
                     </div>
                 }
                 {!this.state.gameStatus &&
                     <div>
-                        <h3 className="quizHeading">Final score {this.state.correct} / {this.state.questions.length}</h3>
+                        <div className="quizHeading">
+                            <h3>Final score {this.state.correct} / {this.state.questions.length}</h3>
+                            {this.state.correct == this.state.questions.length &&
+                                <h3 className="fullScore">&nbsp;&nbsp;&nbsp;100%!</h3>
+                            }
+                        </div>
                         <button className="selection topicEveryday" onClick={this.retry}>Retry</button>
+                        
                     </div>
                 }
+                
             </div>
         )
     }
