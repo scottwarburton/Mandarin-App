@@ -1767,37 +1767,48 @@ const ECONOMICS = [
 const GREETINGS_QUESTIONS = [
   {
     id: 1,
-    paragraph: "blah blah blah",
-    question: "最近我很好。我感觉怎么样",
+    paragraph: "大家好，我叫李老师。很高兴认识你们。最近我很好，但是今天我优点忙， 所以我不能留。下次课见，再见",
+    question: "她的名字是什么",
     answers: [
-      "很好",
-      "不好",
-      "很累",
-      "很兴奋",
+      "小雨",
+      "王经理",
+      "李老师",
+      "吴太太",
     ],
-    correct: 1
+    correct: 2
   },
   {
     id: 2,
-    question: "question2",
+    question: "她最近怎么样",
     answers: [
-      "answer1",
-      "answer2",
-      "answer3",
-      "answer4",
+      "太好了",
+      "不好",
+      "很好",
+      "马马虎虎",
     ],
     correct: 2
   },
   {
     id: 3,
-    question: "question3",
+    question: "为什么她需要去",
     answers: [
-      "answer1",
-      "answer2",
-      "answer3",
-      "answer4",
+      "她接到电话",
+      "她很累",
+      "她太饿了，想吃午餐",
+      "她优点忙",
     ],
     correct: 3
+  },
+  {
+    id: 4,
+    question: "什么时候她会再见他们",
+    answers: [
+      "下次课",
+      "下次星期",
+      "在周五",
+      "明天",
+    ],
+    correct: 0
   },
 ]
 
