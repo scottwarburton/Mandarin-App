@@ -115,6 +115,15 @@ body {
 	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 	background-color:#476e9e;
 }
+.topicShopping {
+	background:linear-gradient(to bottom, #ebd15e 5%, #bd7408 100%);
+	background-color:#ebd15e;
+  border:1px solid hsl(252, 100%, 16%);
+}
+.topicShopping:hover {
+	background:linear-gradient(to bottom, #bd7408 5%, #ebd15e 100%);
+	background-color:#bd7408;
+}
 .topicStudy {
 	background:linear-gradient(to bottom, #a14cbb 5%, #4d2459 100%);
 	background-color: #a14cbb;
@@ -133,6 +142,9 @@ body {
 	background:linear-gradient(to bottom, #204b08 5%, #3a850e 100%);
 	background-color:#204b08;
 }
+.travelLogo {
+  background-color: white;
+}
 .topicIndustries {
 	background:linear-gradient(to bottom, #da4e49 5%, #69201e 100%);
 	background-color:#da4e49;
@@ -150,33 +162,33 @@ body {
   justify-content: space-evenly;
 }
 .topicSelection {
-  width: 1200px;
-  height: 400px;
+  width: 1250px;
+  height: 450px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
 }
 .topicBoxes {
   width: 250px;
-  height: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
-}
-#topicBoxEveryday {
-  justify-content: flex-end;
-}
-/* #topicBoxStudy {} */
-#topicBoxTravel {
-  justify-content: center;
-}
-#topicBoxIndustries {
-  justify-content: flex-end;
+  align-items: center;
 }
 .topicImg {
   border-radius: 10px;
   border: 2px solid white;
   box-shadow: 0px 0px 5px 5px white;
+}
+#topicBoxStudy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#topicBoxTravel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 /* Saved Words */

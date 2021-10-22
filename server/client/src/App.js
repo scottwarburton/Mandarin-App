@@ -4,23 +4,23 @@ import Lesson from "./components/Lesson"
 import Saved from "./components/Saved"
 
 import { IoEarth, IoWalletSharp, IoPartlySunnyOutline, IoSchoolSharp } from "react-icons/io5";
-import { MdEmojiPeople, MdOutlineWork } from "react-icons/md";
-import { GiLaptop, GiCargoCrane, GiTalk } from "react-icons/gi";
+import { MdEmojiPeople, MdOutlineWork, MdCardTravel } from "react-icons/md";
+import { GiLaptop, GiCargoCrane, GiTalk, GiThreeFriends, GiBowlOfRice, GiClothes } from "react-icons/gi";
 import { GrTrain, GrMapLocation } from "react-icons/gr";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiOutlineApple } from "react-icons/ai";
 import { IoIosSave } from "react-icons/io";
-import { FaExchangeAlt, FaShoppingCart, FaUserTie } from "react-icons/fa";
-import { BiRun } from "react-icons/bi";
+import { FaExchangeAlt, FaShoppingCart, FaUserTie, FaShower } from "react-icons/fa";
+import { BiRun, BiHappyAlt } from "react-icons/bi";
 import { BsSpellcheck } from "react-icons/bs";
 import { ImOffice } from "react-icons/im";
-
+import { TiWeatherPartlySunny } from "react-icons/ti";
 
 import everyday from "./components/everyday.jpg"
 import study from "./components/study.jpg"
 import shanghai from "./components/shanghai.jpg"
 import industries from "./components/industries.jpg"
 import flag from "./components/flag.png"
-
+import shopping from "./components/shopping.jpg"
 
 function App() {
   const [topic, setTopic] = useState("");
@@ -68,6 +68,7 @@ function App() {
           }
         </form>
       </div>
+      <br/><br/>
       <div id="body">
 
         {topic === "" && lesson === "" && !saved && 
@@ -87,22 +88,27 @@ function App() {
           <div>
             <div  className="topicSelection">
               <div id="topicBoxEveryday" className="topicBoxes">
-                <img id="everyday" className="topicImg" src={everyday} alt="everyday" width="250px"></img>
+                <img id="everyday" className="topicImg" src={everyday} alt="everyday" width="250px" height="150px"></img>
                 <br/>
                 <button className="selection topicEveryday" id="topicEveryday" onClick={() => setTopic("Everyday")}>Everyday <IoPartlySunnyOutline/></button>
               </div>
               <div id="topicBoxStudy" className="topicBoxes">
-                <img id="study" className="topicImg" src={study} alt="study" width="250px"></img>
+                <img id="study" className="topicImg" src={study} alt="study" width="250px" height="150px"></img>
                 <br/>
                 <button className="selection topicStudy" id="topicStudy" onClick={() => setTopic("Study")}>Work & Study <ImOffice/></button>
               </div>
+              <div id="topicBoxShopping" className="topicBoxes">
+                <img id="shopping" className="topicImg" src={shopping} alt="shopping" width="250px" height="150px"></img>
+                <br/>
+                <button className="selection topicShopping" id="topicShopping" onClick={() => setTopic("Shopping")}>Shopping <FaShoppingCart/></button>
+              </div>
               <div id="topicBoxTravel" className="topicBoxes">
-                <img id="shanghai" className="topicImg" src={shanghai} alt="shanghai" width="250px"></img>
+                <img id="shanghai" className="topicImg" src={shanghai} alt="shanghai" width="250px" height="150px"></img>
                 <br/>
                 <button className="selection topicTravel" id="topicTravel" onClick={() => setTopic("Travel")}>Travel <IoEarth/></button>
               </div>
               <div id="topicBoxIndustries" className="topicBoxes">
-                <img id="industries" className="topicImg" src={industries} alt="industries" width="250px"></img>
+                <img id="industries" className="topicImg" src={industries} alt="industries" width="250px" height="150px"></img>
                 <br/>
                 <button className="selection topicIndustries" id="topicIndustries" onClick={() => setTopic("Industries")}>Industries <GiCargoCrane/></button>
               </div>
@@ -115,9 +121,11 @@ function App() {
             <h3>{topic} Lessons:</h3>
             <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Greetings")}>Greetings <MdEmojiPeople/></button>
             <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Activities")}>Activities <BiRun/></button>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Shopping")}>Shopping <FaShoppingCart/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Household")}>Household <FaShower/></button>
             <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Casual Talk")}>Casual talk <GiTalk/></button>
-            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Grammar")}>Grammar <BsSpellcheck/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Hobbies")}>Hobbies <GiThreeFriends/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Feelings")}>Feelings <BiHappyAlt/></button>
+            <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Weather")}>Weather <TiWeatherPartlySunny/></button>
           </div>
         }
         { topic === "Study" && lesson === "" && !saved &&
@@ -126,13 +134,23 @@ function App() {
             <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Study")}>Study <IoSchoolSharp/></button>
             <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Work")}>Work <MdOutlineWork/></button>
             <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Interview")}>Interview <FaUserTie/></button>
+            <button className="selection topicStudy" name="lessons" onClick={() => setLesson("Grammar")}>Grammar <BsSpellcheck/></button>
           </form>
+        }
+        { topic === "Shopping" && lesson === "" && !saved &&
+          <div className="selectionForm">
+            <h3>{topic} Lessons:</h3>
+            <button className="selection topicShopping" name="lessons" onClick={() => setLesson("Shopping")}>Shopping <FaShoppingCart/></button>
+            <button className="selection topicShopping" name="lessons" onClick={() => setLesson("Clothes")}>Clothes <GiClothes/></button>
+            <button className="selection topicShopping" name="lessons" onClick={() => setLesson("Food")}>Food <GiBowlOfRice/></button>
+          </div>
         }
         { topic === "Travel" && lesson === "" && !saved &&
           <form className="selectionForm">
             <h3>{topic} Lessons:</h3>
-            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport <GrTrain/></button>
-            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Locations")}>Locations <GrMapLocation/></button>
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Transport")}>Transport <GrTrain className="travelLogo"/></button>
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Locations")}>Locations <GrMapLocation className="travelLogo"/></button>
+            <button className="selection topicTravel" name="lessons" onClick={() => setLesson("Tour")}>Tour <MdCardTravel/></button>
           </form>
         }
         { topic === "Industries" && lesson === "" && !saved &&
@@ -140,25 +158,36 @@ function App() {
             <h3>{topic} Lessons:</h3>
             <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Economics")}>Economics <IoWalletSharp/></button>
             <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Technology")}>Technology <GiLaptop/></button>
+            <button className="selection topicIndustries" name="lessons" onClick={() => setLesson("Companies")}>Companies <AiOutlineApple/></button>
           </form>
         }
 
         <div id="lessonBox">
           {lesson === "Greetings" ? <Lesson lesson={lesson} flashcards={GREETINGS} sentences={GREETINGS_SENTENCES} picture={everyday} questions={GREETINGS_QUESTIONS}/> : null}
           {lesson === "Activities" ? <Lesson lesson={lesson} flashcards={ACTIVITIES} sentences={ACTIVITIES_SENTENCES} picture={everyday} questions={ACTIVITIES_QUESTIONS} /> : null}
-          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={everyday} questions={SHOPPING_QUESTIONS} /> : null}
+          {lesson === "Household" ? <Lesson lesson={lesson} flashcards={HOUSEHOLD} sentences={HOUSEHOLD_SENTENCES} picture={everyday} questions={HOUSEHOLD_QUESTIONS} /> : null}
           {lesson === "Casual Talk" ? <Lesson lesson={lesson} flashcards={CASUALTALK} sentences={CASUALTALK_SENTENCES} picture={everyday} questions={CASUALTALK_QUESTIONS} /> : null}
-          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} picture={everyday} questions={GRAMMAR_QUESTIONS} /> : null}
+          {lesson === "Hobbies" ? <Lesson lesson={lesson} flashcards={HOBBIES} sentences={HOBBIES_SENTENCES} picture={everyday} questions={HOBBIES_QUESTIONS} /> : null}
+          {lesson === "Feelings" ? <Lesson lesson={lesson} flashcards={FEELINGS} sentences={FEELINGS_SENTENCES} picture={everyday} questions={FEELINGS_QUESTIONS} /> : null}
+          {lesson === "Weather" ? <Lesson lesson={lesson} flashcards={WEATHER} sentences={WEATHER_SENTENCES} picture={everyday} questions={WEATHER_QUESTIONS} /> : null}
           
-          {lesson === "Study" ? <Lesson lesson={lesson} flashcards={STUDY} sentences={STUDY_SENTENCES} picture={everyday} questions={STUDY_QUESTIONS} /> : null}
-          {lesson === "Work" ? <Lesson lesson={lesson} flashcards={WORK} sentences={WORK_SENTENCES} picture={everyday} questions={WORK_QUESTIONS} /> : null}
-          {lesson === "Interview" ? <Lesson lesson={lesson} flashcards={INTERVIEW} sentences={INTERVIEW_SENTENCES} picture={everyday} questions={INTERVIEW_QUESTIONS} /> : null}
-          
+          {lesson === "Study" ? <Lesson lesson={lesson} flashcards={STUDY} sentences={STUDY_SENTENCES} picture={study} questions={STUDY_QUESTIONS} /> : null}
+          {lesson === "Work" ? <Lesson lesson={lesson} flashcards={WORK} sentences={WORK_SENTENCES} picture={study} questions={WORK_QUESTIONS} /> : null}
+          {lesson === "Interview" ? <Lesson lesson={lesson} flashcards={INTERVIEW} sentences={INTERVIEW_SENTENCES} picture={study} questions={INTERVIEW_QUESTIONS} /> : null}
+          {lesson === "Grammar" ? <Lesson lesson={lesson} flashcards={GRAMMAR} sentences={GRAMMAR_SENTENCES} picture={study} questions={GRAMMAR_QUESTIONS} /> : null}
+
+          {lesson === "Shopping" ? <Lesson lesson={lesson} flashcards={SHOPPING} sentences={SHOPPING_SENTENCES} picture={shopping} questions={SHOPPING_QUESTIONS} /> : null}
+          {lesson === "Clothes" ? <Lesson lesson={lesson} flashcards={CLOTHES} sentences={CLOTHES_SENTENCES} picture={shopping} questions={CLOTHES_QUESTIONS} /> : null}
+          {lesson === "Food" ? <Lesson lesson={lesson} flashcards={FOOD} sentences={FOOD_SENTENCES} picture={shopping} questions={FOOD_QUESTIONS} /> : null}
+
+
           {lesson === "Transport" ? <Lesson lesson={lesson} flashcards={TRANSPORT} sentences={TRANSPORT_SENTENCES} picture={shanghai} questions={TRANSPORT_QUESTIONS} /> : null}
           {lesson === "Locations" ? <Lesson lesson={lesson} flashcards={LOCATIONS} sentences={LOCATIONS_SENTENCES} picture={shanghai} questions={LOCATIONS_QUESTIONS} /> : null}
+          {lesson === "Tour" ? <Lesson lesson={lesson} flashcards={TOUR} sentences={TOUR_SENTENCES} picture={shanghai} questions={TOUR_QUESTIONS} /> : null}
           
           {lesson === "Economics" ? <Lesson lesson={lesson} flashcards={ECONOMICS} sentences={ECONOMICS_SENTENCES} picture={industries} questions={ECONOMICS_QUESTIONS} /> : null}
           {lesson === "Technology" ? <Lesson lesson={lesson} flashcards={TECHNOLOGY} sentences={TECHNOLOGY_SENTENCES} picture={industries} questions={TECHNOLOGY_QUESTIONS} /> : null}
+          {lesson === "Companies" ? <Lesson lesson={lesson} flashcards={COMPANIES} sentences={COMPANIES_SENTENCES} picture={industries} questions={COMPANIES_QUESTIONS} /> : null}
         </div>
       </div>
     </div>
@@ -266,6 +295,46 @@ const TECHNOLOGY_SENTENCES = [
   "我喜欢学习编程",
   "我的桌子上在一个电脑，显示器，键盘，和鼠标",
   "我的手机没有电了，需要一个充电器"
+]
+const TOUR_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const HOUSEHOLD_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const HOBBIES_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const FOOD_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const FEELINGS_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const CLOTHES_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const WEATHER_SENTENCES = [
+  "",
+  "",
+  ""
+]
+const COMPANIES_SENTENCES = [
+  "",
+  "",
+  ""
 ]
 
 
@@ -423,8 +492,6 @@ const GREETINGS = [
       pinyin: "zěnme yàng"
   }
 ]
-
-
 const ACTIVITIES = [
   {
       id: 1,
@@ -535,7 +602,6 @@ const ACTIVITIES = [
     pinyin: "pǎobù"
   }
 ]
-
 const SHOPPING = [
   {
       id: 1,
@@ -646,7 +712,6 @@ const SHOPPING = [
     pinyin: "duōshǎo qián"
   }
 ]
-
 const CASUALTALK = [
   {
       id: 1,
@@ -757,7 +822,6 @@ const CASUALTALK = [
     pinyin: "gǎitiān zàishuō ba"
   }
 ]
-
 const GRAMMAR = [
   {
       id: 1,
@@ -868,7 +932,6 @@ const GRAMMAR = [
     pinyin: "duǎnhuà"
   }
 ]
-
 const STUDY = [
   {
       id: 1,
@@ -1199,7 +1262,6 @@ const INTERVIEW = [
     pinyin: "lǐxiǎng"
   }
 ]
-
 const TRANSPORT = [
   {
     id: 1,
@@ -1310,8 +1372,6 @@ const TRANSPORT = [
     pinyin: "chídàole"
   }
 ]
-
-
 const LOCATIONS = [
   {
       id: 1,
@@ -1422,8 +1482,6 @@ const LOCATIONS = [
     pinyin: "zhōu"
   }
 ]
-
-
 const ECONOMICS = [
   {
       id: 1,
@@ -1534,8 +1592,6 @@ const ECONOMICS = [
     pinyin: "qiánbāo"
   }
 ]
-
-
 const TECHNOLOGY = [
   {
       id: 1,
@@ -1646,7 +1702,886 @@ const TECHNOLOGY = [
     pinyin: "shǔbiāo"
   }
 ]
-
+const TOUR = [
+  {
+      id: 1,
+      english: "travel",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "suitcase",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "to catch a flight",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "boarding",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "tickets",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "camera",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "sunglasses",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "sunscreen",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "map",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "passport",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "directions",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "to be lost",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "to translate",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "international",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "visa",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "foreigner",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "adventure",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "tour guide",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const HOUSEHOLD = [
+  {
+      id: 1,
+      english: "kitchen",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "cooking",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "cleaning",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "bathroom",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "to shower",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "brushing teeth",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "toothpaste",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "soap",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "wash hands",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "wash hair",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "wash clothes",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "wash ",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "shampoo",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "bedroom",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "room",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "house",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "living room",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "open the door",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const HOBBIES = [
+  {
+      id: 1,
+      english: "TV",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "movie",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "netflix",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "seeing friends",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "playing soccer",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "playing basketball",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "to work out",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "play computer games",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "to go out",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "to relax",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "listen to music",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "hiking",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "board games",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "meditation",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "karaoke",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "to go on social media",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "go for a walk",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "to go shopping",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const FOOD = [
+  {
+      id: 1,
+      english: "rice",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "pasta",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "vegetables",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "fruit",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "dumplings",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "pork bun",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "Shanghai dumplings",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "noodles",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "hot pot",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "BBQ",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "sushi",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "meat",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "chicken",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "beef",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "lamb",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "pork",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "seafood",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "food",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const FEELINGS = [
+  {
+      id: 1,
+      english: "happy",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "excited",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "surprised",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "confident",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "calm",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "tired",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "sick",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "hurt",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "scared",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "annoyed",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "lonely",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "stressed",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "confused",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "embarassed",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "angry",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "unhappy",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "sad",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "jealous",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const CLOTHES = [
+  {
+      id: 1,
+      english: "T-shirt",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "pants",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "skirt",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "hat",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "gloves",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "jacket",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "suit",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "tie",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "dress",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "shoes",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "boots",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "belt",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "socks",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "underwear",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "jeans",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "thongs",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "bathers",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "bikini",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const WEATHER = [
+  {
+      id: 1,
+      english: "summer",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "autumn",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "winter",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "spring",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "season",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "hot",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "warm",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "cold",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "rain",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "snow",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "sunny",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "windy",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "cloudy",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "humid",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "weather",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "temperature",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "lightning",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "storm",
+    mandarin: "",
+    pinyin: ""
+  }
+]
+const COMPANIES = [
+  {
+      id: 1,
+      english: "Google",
+      mandarin: "",
+      pinyin: ""
+  },
+  {
+    id: 2,
+    english: "Apple",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 3,
+    english: "Amazon",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 4,
+    english: "Facebook",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 5,
+    english: "Microsoft",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 6,
+    english: "Coca Cola",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 7,
+    english: "Alibaba",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 8,
+    english: "Baidu",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 9,
+    english: "Tencent",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 10,
+    english: "Uber",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 11,
+    english: "Didi Chuxing",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 12,
+    english: "Meituan Dianping",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 13,
+    english: "Toutiao",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 14,
+    english: "Tesla",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 15,
+    english: "Samsung",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 16,
+    english: "Huawei",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 17,
+    english: "McDonalds",
+    mandarin: "",
+    pinyin: ""
+  },
+  {
+    id: 18,
+    english: "Starbucks",
+    mandarin: "",
+    pinyin: ""
+  }
+]
 
 /*
 const ECONOMICS = [
@@ -1760,14 +2695,12 @@ const ECONOMICS = [
   }
 ]
 
-
-
 */
 
 const GREETINGS_QUESTIONS = [
   {
     id: 1,
-    paragraph: "大家好，我叫李老师。很高兴认识你们。最近我很好，但是今天我优点忙， 所以我不能留。下次课见，再见",
+    paragraph: "大家好，我叫李老师。很高兴认识你们。最近我很好，但是今天我有点忙， 所以我不能留。下次课见，再见",
     question: "她的名字是什么",
     answers: [
       "小雨",
@@ -1795,13 +2728,13 @@ const GREETINGS_QUESTIONS = [
       "她接到电话",
       "她很累",
       "她太饿了，想吃午餐",
-      "她优点忙",
+      "她有点忙",
     ],
     correct: 3
   },
   {
     id: 4,
-    question: "什么时候她会再见他们",
+    question: "她什么时候会再见到他们",
     answers: [
       "下次课",
       "下次星期",
@@ -1811,7 +2744,6 @@ const GREETINGS_QUESTIONS = [
     correct: 0
   },
 ]
-
 const ACTIVITIES_QUESTIONS = [
   {
     id: 1,
@@ -1848,7 +2780,6 @@ const ACTIVITIES_QUESTIONS = [
     correct: 3
   },
 ]
-
 const SHOPPING_QUESTIONS = [
   {
     id: 1,
@@ -2174,6 +3105,294 @@ const ECONOMICS_QUESTIONS = [
   },
 ]
 const TECHNOLOGY_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const TOUR_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const HOUSEHOLD_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const HOBBIES_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const FOOD_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const FEELINGS_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const CLOTHES_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const WEATHER_QUESTIONS = [
+  {
+    id: 1,
+    paragraph: "blah blah blah",
+    question: "question1",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 1
+  },
+  {
+    id: 2,
+    question: "question2",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 2
+  },
+  {
+    id: 3,
+    question: "question3",
+    answers: [
+      "answer1",
+      "answer2",
+      "answer3",
+      "answer4",
+    ],
+    correct: 3
+  },
+]
+const COMPANIES_QUESTIONS = [
   {
     id: 1,
     paragraph: "blah blah blah",
