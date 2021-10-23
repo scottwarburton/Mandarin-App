@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Words(models.Model):
-    englishWord = models.TextField()
-    mandarinWord = models.TextField()
-    pinyinWord = models.TextField()
+    englishWord = models.TextField(default="")
+    mandarinWord = models.TextField(default="")
+    pinyinWord = models.TextField(default="")
 
     def __str__(self):
         return self.englishWord

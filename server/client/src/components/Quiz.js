@@ -38,7 +38,7 @@ class Quiz extends React.Component {
                         <h4 className="quizHeading">Score {this.state.correct} / {this.state.currentQuestion}</h4>
                     </div>
                 }
-                {!this.state.gameStatus &&
+                {!this.state.gameStatus && 
                     <div>
                         <div className="quizHeading">
                             <h3>Final score {this.state.correct} / {this.state.questions.length}</h3>
