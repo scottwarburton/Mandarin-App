@@ -16,7 +16,7 @@ function Lesson(props) {
                             <h3>Welcome to {props.lesson}</h3>
                         </div>
                         <div id="lessonPicDiv">
-                            <img id="lessonPic" src={props.picture}/>
+                            <img id="lessonPic" alt="lessonPic" src={props.picture}/>
                         </div>
                     </TabPanel>
                     <TabPanel>

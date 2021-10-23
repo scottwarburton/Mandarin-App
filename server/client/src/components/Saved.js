@@ -40,7 +40,7 @@ class Saved extends React.Component {
     };
     async handleSubmit(e) {
         e.preventDefault();
-        let response = await axios
+        await axios
         .post("", {wordToDelete: e.target.wordToDelete.value})
         .then(function (response) {
             console.log(response);

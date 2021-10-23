@@ -14,10 +14,10 @@ class Quiz extends React.Component {
         this.retry = this.retry.bind(this);
     }
     handleClick(selection) {
-        if (selection == this.state.questions[this.state.currentQuestion].correct) {
+        if (selection === this.state.questions[this.state.currentQuestion].correct) {
             this.setState({correct: this.state.correct + 1});
         }
-        if (this.state.currentQuestion == this.state.questions.length - 1) {
+        if (this.state.currentQuestion === this.state.questions.length - 1) {
             this.setState({gameStatus: false});
         } else {
             this.setState({currentQuestion: this.state.currentQuestion + 1});
@@ -42,7 +42,7 @@ class Quiz extends React.Component {
                     <div>
                         <div className="quizHeading">
                             <h3>Final score {this.state.correct} / {this.state.questions.length}</h3>
-                            {this.state.correct == this.state.questions.length &&
+                            {this.state.correct === this.state.questions.length &&
                                 <h3 className="fullScore">&nbsp;&nbsp;&nbsp;100%!</h3>
                             }
                         </div>
