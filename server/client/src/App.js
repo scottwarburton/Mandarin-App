@@ -195,7 +195,6 @@ function App() {
   );
 
 }
-
 export default App;
 
 const GREETINGS_SENTENCES = [
