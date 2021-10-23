@@ -68,7 +68,7 @@ function App() {
           }
         </form>
       </div>
-      <br/><br/>
+      
       <div id="body">
 
         {topic === "" && lesson === "" && !saved && 
@@ -118,6 +118,7 @@ function App() {
         
         { topic === "Everyday" && lesson === "" && !saved &&
           <div className="selectionForm">
+            <br/><br/><br/>
             <h3>{topic} Lessons:</h3>
             <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Greetings")}>Greetings <MdEmojiPeople/></button>
             <button className="selection topicEveryday" name="lessons" onClick={() => setLesson("Activities")}>Activities <BiRun/></button>
@@ -1706,880 +1707,880 @@ const TOUR = [
   {
       id: 1,
       english: "travel",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "旅行",
+      pinyin: "lǚxíng"
   },
   {
     id: 2,
     english: "suitcase",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "手提箱",
+    pinyin: "shǒutí xiāng"
   },
   {
     id: 3,
     english: "to catch a flight",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "赶飞机",
+    pinyin: "gǎn fēijī"
   },
   {
     id: 4,
     english: "boarding",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "板机",
+    pinyin: "bǎn jī"
   },
   {
     id: 5,
     english: "tickets",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "票",
+    pinyin: "piào"
   },
   {
     id: 6,
     english: "camera",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "相机",
+    pinyin: "xiàngjī"
   },
   {
     id: 7,
     english: "sunglasses",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "太阳镜",
+    pinyin: "tàiyángjìng"
   },
   {
     id: 8,
     english: "sunscreen",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "防晒霜",
+    pinyin: "fángshài shuāng"
   },
   {
     id: 9,
     english: "map",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "地图",
+    pinyin: "dìtú"
   },
   {
     id: 10,
     english: "passport",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "护照",
+    pinyin: "hùzhào"
   },
   {
     id: 11,
     english: "directions",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "方向",
+    pinyin: "fāngxiàng"
   },
   {
     id: 12,
     english: "to be lost",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "迷路了",
+    pinyin: "mílùle"
   },
   {
     id: 13,
     english: "to translate",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "翻译",
+    pinyin: "fānyì"
   },
   {
     id: 14,
     english: "international",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "国际",
+    pinyin: "guójì"
   },
   {
     id: 15,
     english: "visa",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "签证",
+    pinyin: "qiānzhèng"
   },
   {
     id: 16,
     english: "foreigner",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "外国人",
+    pinyin: "wàiguó rén"
   },
   {
     id: 17,
     english: "adventure",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "冒险",
+    pinyin: "màoxiǎn"
   },
   {
     id: 18,
     english: "tour guide",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "导游",
+    pinyin: "dǎoyóu"
   }
 ]
 const HOUSEHOLD = [
   {
       id: 1,
       english: "kitchen",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "厨房",
+      pinyin: "chúfáng"
   },
   {
     id: 2,
-    english: "cooking",
-    mandarin: "",
-    pinyin: ""
+    english: "to cook",
+    mandarin: "做饭",
+    pinyin: "zuò fàn"
   },
   {
     id: 3,
-    english: "cleaning",
-    mandarin: "",
-    pinyin: ""
+    english: "to clean",
+    mandarin: "清洗",
+    pinyin: "qīngxǐ"
   },
   {
     id: 4,
     english: "bathroom",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "浴室",
+    pinyin: "Yùshì"
   },
   {
     id: 5,
     english: "to shower",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "洗澡",
+    pinyin: "xǐzǎo"
   },
   {
     id: 6,
     english: "brushing teeth",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "刷牙",
+    pinyin: "shuāyá"
   },
   {
     id: 7,
     english: "toothpaste",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "牙膏",
+    pinyin: "yágāo"
   },
   {
     id: 8,
     english: "soap",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "肥皂",
+    pinyin: "féizào"
   },
   {
     id: 9,
     english: "wash hands",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "洗手",
+    pinyin: "xǐ shǒu"
   },
   {
     id: 10,
     english: "wash hair",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "洗头",
+    pinyin: "xǐ tóu"
   },
   {
     id: 11,
     english: "wash clothes",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "洗衣服",
+    pinyin: "xǐ yīfú"
   },
   {
     id: 12,
-    english: "wash ",
-    mandarin: "",
-    pinyin: ""
+    english: "shampoo",
+    mandarin: "洗发水",
+    pinyin: "xǐ fǎ shuǐ"
   },
   {
     id: 13,
-    english: "shampoo",
-    mandarin: "",
-    pinyin: ""
+    english: "balcony",
+    mandarin: "阳台",
+    pinyin: "yángtái"
   },
   {
     id: 14,
     english: "bedroom",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "卧室",
+    pinyin: "wòshì"
   },
   {
     id: 15,
     english: "room",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "房间",
+    pinyin: "fángjiān"
   },
   {
     id: 16,
     english: "house",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "房子",
+    pinyin: "fángzi"
   },
   {
     id: 17,
     english: "living room",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "客厅",
+    pinyin: "kètīng"
   },
   {
     id: 18,
     english: "open the door",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "开门",
+    pinyin: "kāimén"
   }
 ]
 const HOBBIES = [
   {
       id: 1,
       english: "TV",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "电视",
+      pinyin: "diànshì"
   },
   {
     id: 2,
     english: "movie",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "电影",
+    pinyin: "diànyǐng"
   },
   {
     id: 3,
-    english: "netflix",
-    mandarin: "",
-    pinyin: ""
+    english: "Netflix",
+    mandarin: "网飞",
+    pinyin: "wǎng fēi"
   },
   {
     id: 4,
     english: "seeing friends",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "见朋友",
+    pinyin: "jiàn péngyǒu"
   },
   {
     id: 5,
     english: "playing soccer",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "踢足球",
+    pinyin: "tī zúqiú"
   },
   {
     id: 6,
     english: "playing basketball",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "打篮球",
+    pinyin: "dǎ lánqiú"
   },
   {
     id: 7,
     english: "to work out",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "锻炼",
+    pinyin: "duànliàn"
   },
   {
     id: 8,
     english: "play computer games",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "玩电脑游戏",
+    pinyin: "wán diànnǎo yóuxì"
   },
   {
     id: 9,
     english: "to go out",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "出去",
+    pinyin: "chūqù"
   },
   {
     id: 10,
     english: "to relax",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "放松",
+    pinyin: "fàngsōng"
   },
   {
     id: 11,
     english: "listen to music",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "听音乐",
+    pinyin: "tīng yīnyuè"
   },
   {
     id: 12,
     english: "hiking",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "远足",
+    pinyin: "yuǎnzú"
   },
   {
     id: 13,
     english: "board games",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "棋盘游戏",
+    pinyin: "qípán yóuxì"
   },
   {
     id: 14,
     english: "meditation",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "冥想",
+    pinyin: "míngxiǎng"
   },
   {
     id: 15,
     english: "karaoke",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "卡拉OK",
+    pinyin: "kǎlā OK"
   },
   {
     id: 16,
     english: "to go on social media",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "去社交媒体",
+    pinyin: "qù shèjiāo méitǐ"
   },
   {
     id: 17,
     english: "go for a walk",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "出去走走",
+    pinyin: "chūqù zǒu zǒu"
   },
   {
     id: 18,
     english: "to go shopping",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "去购物",
+    pinyin: "qù gòuwù"
   }
 ]
 const FOOD = [
   {
       id: 1,
       english: "rice",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "白饭",
+      pinyin: "báifàn"
   },
   {
     id: 2,
     english: "pasta",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "面食",
+    pinyin: "miànshí"
   },
   {
     id: 3,
     english: "vegetables",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "蔬菜",
+    pinyin: "shūcài"
   },
   {
     id: 4,
     english: "fruit",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "水果",
+    pinyin: "shuǐguǒ"
   },
   {
     id: 5,
     english: "dumplings",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "饺子",
+    pinyin: "jiǎozi"
   },
   {
     id: 6,
     english: "pork bun",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "猪肉包子",
+    pinyin: "zhūròu bāozi"
   },
   {
     id: 7,
     english: "Shanghai dumplings",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "小笼包",
+    pinyin: "xiǎo lóng bāo"
   },
   {
     id: 8,
     english: "noodles",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "面条",
+    pinyin: "miàntiáo"
   },
   {
     id: 9,
     english: "hot pot",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "火锅",
+    pinyin: "huǒguō"
   },
   {
     id: 10,
     english: "BBQ",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "烧烤",
+    pinyin: "shāokǎo"
   },
   {
     id: 11,
     english: "sushi",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "寿司",
+    pinyin: "shòusī"
   },
   {
     id: 12,
     english: "meat",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "肉",
+    pinyin: "ròu"
   },
   {
     id: 13,
     english: "chicken",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "鸡",
+    pinyin: "jī"
   },
   {
     id: 14,
     english: "beef",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "牛肉",
+    pinyin: "niúròu"
   },
   {
     id: 15,
     english: "lamb",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "羊肉",
+    pinyin: "yángròu"
   },
   {
     id: 16,
     english: "pork",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "猪肉",
+    pinyin: "zhūròu"
   },
   {
     id: 17,
     english: "seafood",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "海鲜",
+    pinyin: "hǎixiān"
   },
   {
     id: 18,
     english: "food",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "食物",
+    pinyin: "shíwù"
   }
 ]
 const FEELINGS = [
   {
       id: 1,
       english: "happy",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "快乐",
+      pinyin: "kuàilè"
   },
   {
     id: 2,
     english: "excited",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "兴奋",
+    pinyin: "xīngfèn"
   },
   {
     id: 3,
     english: "surprised",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "惊讶",
+    pinyin: "jīngyà"
   },
   {
     id: 4,
     english: "confident",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "自信",
+    pinyin: "zìxìn"
   },
   {
     id: 5,
     english: "calm",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "冷静",
+    pinyin: "lěngjìng"
   },
   {
     id: 6,
     english: "tired",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "累",
+    pinyin: "lèi"
   },
   {
     id: 7,
     english: "sick",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "生病",
+    pinyin: "shēngbìng"
   },
   {
     id: 8,
     english: "hurt",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "痛",
+    pinyin: "tòng"
   },
   {
     id: 9,
     english: "scared",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "害怕",
+    pinyin: "hàipà"
   },
   {
     id: 10,
     english: "annoyed",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "烦恼",
+    pinyin: "fánnǎo"
   },
   {
     id: 11,
     english: "lonely",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "孤独",
+    pinyin: "gūdú"
   },
   {
     id: 12,
-    english: "stressed",
-    mandarin: "",
-    pinyin: ""
+    english: "stress",
+    mandarin: "压力",
+    pinyin: "yālì"
   },
   {
     id: 13,
     english: "confused",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "困惑",
+    pinyin: "kùnhuò"
   },
   {
     id: 14,
     english: "embarassed",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "尴尬",
+    pinyin: "gāngà"
   },
   {
     id: 15,
     english: "angry",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "生气",
+    pinyin: "shēngqì"
   },
   {
     id: 16,
     english: "unhappy",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "不开心",
+    pinyin: "bù kāixīn"
   },
   {
     id: 17,
     english: "sad",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "伤心",
+    pinyin: "shāngxīn"
   },
   {
     id: 18,
-    english: "jealous",
-    mandarin: "",
-    pinyin: ""
+    english: "envious",
+    mandarin: "羡慕",
+    pinyin: "xiànmù"
   }
 ]
 const CLOTHES = [
   {
       id: 1,
       english: "T-shirt",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "T恤衫",
+      pinyin: "T xùshān"
   },
   {
     id: 2,
     english: "pants",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "裤子",
+    pinyin: "kùzi"
   },
   {
     id: 3,
     english: "skirt",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "裙子",
+    pinyin: "qúnzi"
   },
   {
     id: 4,
     english: "hat",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "帽子",
+    pinyin: "màozi"
   },
   {
     id: 5,
     english: "gloves",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "手套",
+    pinyin: "shǒutào"
   },
   {
     id: 6,
     english: "jacket",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "夹克",
+    pinyin: "jiákè"
   },
   {
     id: 7,
     english: "suit",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "西装",
+    pinyin: "xīzhuāng"
   },
   {
     id: 8,
     english: "tie",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "领带",
+    pinyin: "lǐngdài"
   },
   {
     id: 9,
     english: "dress",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "连衣裙",
+    pinyin: "liányīqún"
   },
   {
     id: 10,
     english: "shoes",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "鞋",
+    pinyin: "xié"
   },
   {
     id: 11,
     english: "boots",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "靴子",
+    pinyin: "xuēzi"
   },
   {
     id: 12,
     english: "belt",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "腰带",
+    pinyin: "yāodài"
   },
   {
     id: 13,
     english: "socks",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "袜子",
+    pinyin: "wàzi"
   },
   {
     id: 14,
     english: "underwear",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "内衣",
+    pinyin: "nèiyī"
   },
   {
     id: 15,
     english: "jeans",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "牛仔裤",
+    pinyin: "niúzǎikù"
   },
   {
     id: 16,
     english: "thongs",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "人字拖",
+    pinyin: "rén zì tuō"
   },
   {
     id: 17,
     english: "bathers",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "泳装",
+    pinyin: "yǒngzhuāng"
   },
   {
     id: 18,
     english: "bikini",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "比基尼",
+    pinyin: "bǐjīní"
   }
 ]
 const WEATHER = [
   {
       id: 1,
       english: "summer",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "夏天",
+      pinyin: "xiàtiān"
   },
   {
     id: 2,
     english: "autumn",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "秋天",
+    pinyin: "qiūtiān"
   },
   {
     id: 3,
     english: "winter",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "冬天",
+    pinyin: "dōngtiān"
   },
   {
     id: 4,
     english: "spring",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "春天",
+    pinyin: "chūntiān"
   },
   {
     id: 5,
     english: "season",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "季节",
+    pinyin: "jìjié"
   },
   {
     id: 6,
     english: "hot",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "热",
+    pinyin: "rè"
   },
   {
     id: 7,
     english: "warm",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "温暖",
+    pinyin: "wēnnuǎn"
   },
   {
     id: 8,
     english: "cold",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "寒冷",
+    pinyin: "hánlěng"
   },
   {
     id: 9,
     english: "rain",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "雨",
+    pinyin: "xià Yǔ"
   },
   {
     id: 10,
     english: "snow",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "下雪",
+    pinyin: "xià xuě"
   },
   {
     id: 11,
     english: "sunny",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "阳光",
+    pinyin: "yángguāng"
   },
   {
     id: 12,
     english: "windy",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "有风",
+    pinyin: "yǒu fēng"
   },
   {
     id: 13,
     english: "cloudy",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "多云的",
+    pinyin: "duōyún"
   },
   {
     id: 14,
     english: "humid",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "湿",
+    pinyin: "shī"
   },
   {
     id: 15,
     english: "weather",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "天气",
+    pinyin: "tiānqì"
   },
   {
     id: 16,
     english: "temperature",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "温度",
+    pinyin: "wēndù"
   },
   {
     id: 17,
-    english: "lightning",
-    mandarin: "",
-    pinyin: ""
+    english: "climate",
+    mandarin: "气候",
+    pinyin: "qìhòu"
   },
   {
     id: 18,
     english: "storm",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "风暴",
+    pinyin: "fēngbào"
   }
 ]
 const COMPANIES = [
   {
       id: 1,
       english: "Google",
-      mandarin: "",
-      pinyin: ""
+      mandarin: "谷歌",
+      pinyin: "Gǔgē"
   },
   {
     id: 2,
     english: "Apple",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "苹果",
+    pinyin: "Píngguǒ"
   },
   {
     id: 3,
     english: "Amazon",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "亚马逊",
+    pinyin: "Yàmǎxùn"
   },
   {
     id: 4,
     english: "Facebook",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "脸书",
+    pinyin: "Liǎn shū"
   },
   {
     id: 5,
     english: "Microsoft",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "微软",
+    pinyin: "Wēiruǎn"
   },
   {
     id: 6,
     english: "Coca Cola",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "可口可乐",
+    pinyin: "Kěkǒukělè"
   },
   {
     id: 7,
     english: "Alibaba",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "阿里巴巴",
+    pinyin: "Ālǐ bābā"
   },
   {
     id: 8,
     english: "Baidu",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "百度",
+    pinyin: "Bǎidù"
   },
   {
     id: 9,
     english: "Tencent",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "腾讯",
+    pinyin: "Téngxùn"
   },
   {
     id: 10,
     english: "Uber",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "优步",
+    pinyin: "Yōubù"
   },
   {
     id: 11,
     english: "Didi Chuxing",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "滴滴出行",
+    pinyin: "Dīdī chūxíng"
   },
   {
     id: 12,
     english: "Meituan Dianping",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "美团点评",
+    pinyin: "Měituán diǎnpíng"
   },
   {
     id: 13,
     english: "Toutiao",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "头条",
+    pinyin: "Tóutiáo"
   },
   {
     id: 14,
     english: "Tesla",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "特斯拉",
+    pinyin: "Tèsīlā"
   },
   {
     id: 15,
     english: "Samsung",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "三星",
+    pinyin: "Sānxīng"
   },
   {
     id: 16,
     english: "Huawei",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "Huáwèi",
+    pinyin: "Huáwèi"
   },
   {
     id: 17,
-    english: "McDonalds",
-    mandarin: "",
-    pinyin: ""
+    english: "McDonald's",
+    mandarin: "麦当劳",
+    pinyin: "Màidāngláo"
   },
   {
     id: 18,
     english: "Starbucks",
-    mandarin: "",
-    pinyin: ""
+    mandarin: "星巴克",
+    pinyin: "Xīngbākè"
   }
 ]
 
