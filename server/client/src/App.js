@@ -22,6 +22,11 @@ import industries from "./components/industries.jpg"
 import flag from "./components/flag.png"
 import shopping from "./components/shopping.jpg"
 
+import axios from 'axios';
+
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 function App() {
   const [topic, setTopic] = useState("");
   const [lesson, setLesson] = useState("");
