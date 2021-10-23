@@ -2,7 +2,7 @@
 
 from pathlib import Path
 import os
-import django_heroku
+import django_heroku        #added
 
 django_heroku.settings(locals())    #added
 
