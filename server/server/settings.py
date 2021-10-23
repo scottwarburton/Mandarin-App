@@ -20,7 +20,7 @@ SECRET_KEY = 'django-insecure-bxl9t47msrb-$c3)z=h(zvt83m$5d*djw)k&&+6_s58*!v$i+(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mandarin-life.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['mandarin-life.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'server.wsgi.application'
+#WSGI_APPLICATION = 'server.wsgi.application'
 
 
 # Database
