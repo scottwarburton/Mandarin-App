@@ -1,2 +1,2 @@
-release: python manage.py migrate
-web: gunicorn Mandarin-app.server.server.wsgi --log-file -
+release: python3 manage.py migrate
+web: gunicorn server.server.wsgi --log-file -
