@@ -135,6 +135,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "client/build/static"),
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #added
+
 CORS_ORIGIN_WHITELIST = [       #added
     'http://localhost:3000',
 ]
