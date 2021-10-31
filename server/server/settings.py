@@ -153,5 +153,5 @@ REST_FRAMEWORK = {             #added
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media') #added
+MEDIA_URL = '/media/'   #added
