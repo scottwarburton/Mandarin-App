@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "http://mandarin-life.herokuapp.com/",
+  "homepage": "https://mandarin-life.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:8000",
