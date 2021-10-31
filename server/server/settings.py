@@ -2,10 +2,10 @@
 
 from pathlib import Path
 import os
-import django_heroku        #added
-import dj_database_url      #added
+import django_heroku
+import dj_database_url
 
-django_heroku.settings(locals())    #added
+django_heroku.settings(locals())
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'WordsDB',   #BASE_DIR / 'db.sqlite3'
+        'NAME': 'WordsDB',
         'USER': 'postgres',
         'PASSWORD': 'postgresScott1',
         'HOST': 'localhost',
@@ -89,8 +89,6 @@ DATABASES = {
 }
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
-
-#postgresql-cubic-55105
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -142,16 +140,16 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "client/build/static"),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #added
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CORS_ORIGIN_WHITELIST = [       #added
+CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 
-REST_FRAMEWORK = {             #added
+REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-MEDIA_ROOT = os.path.join(BASE_DIR,'media') #added
-MEDIA_URL = '/media/'   #added
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
